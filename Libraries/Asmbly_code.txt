@@ -1,0 +1,1287 @@
+; THIS ASSEMBLY CODE FOR TEST_STRINGTOWORDS_FUNC.CPP 
+$SG35384 DB 'hello the repeated qualification std it''s tedious and d'
+  DB 'istracting', 00H
+static std::locale::facet const * const std::_Facetptr<std::ctype<char> >::_Psave DD 01H DUP (?) ; std::_Facetptr<std::ctype<char> >::_Psave
+std::ios_base::failure::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::ios_base::failure `RTTI Type Descriptor' ; std::ios_base::failure::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 04H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::ios_base::failure::`RTTI Class Hierarchy Descriptor'
+std::ios_base::failure::`RTTI Base Class Array' DD FLAT:std::ios_base::failure::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::ios_base::failure::`RTTI Base Class Array'
+  DD FLAT:std::system_error::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::_System_error::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::runtime_error::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
+std::ios_base::failure::`RTTI Class Hierarchy Descriptor' DD 00H ; std::ios_base::failure::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 05H
+  DD FLAT:std::ios_base::failure::`RTTI Base Class Array'
+const std::ios_base::failure::`RTTI Complete Object Locator' DD 00H ; std::ios_base::failure::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::ios_base::failure `RTTI Type Descriptor'
+  DD FLAT:std::ios_base::failure::`RTTI Class Hierarchy Descriptor'
+std::ctype<char>::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::ctype<char> `RTTI Type Descriptor' ; std::ctype<char>::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 04H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::ctype<char>::`RTTI Class Hierarchy Descriptor'
+std::ctype<char>::`RTTI Base Class Array' DD FLAT:std::ctype<char>::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::ctype<char>::`RTTI Base Class Array'
+  DD FLAT:std::ctype_base::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::locale::facet::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::_Facet_base::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::_Crt_new_delete::`RTTI Base Class Descriptor at (4,-1,0,64)'
+std::ctype<char>::`RTTI Class Hierarchy Descriptor' DD 00H ; std::ctype<char>::`RTTI Class Hierarchy Descriptor'
+  DD 01H
+  DD 05H
+  DD FLAT:std::ctype<char>::`RTTI Base Class Array'
+std::ctype<char> `RTTI Type Descriptor' DD FLAT:const type_info::`vftable' ; std::ctype<char> `RTTI Type Descriptor'
+  DD 00H
+  DB '.?AV?$ctype@D@std@@', 00H
+const std::ctype<char>::`RTTI Complete Object Locator' DD 00H ; std::ctype<char>::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::ctype<char> `RTTI Type Descriptor'
+  DD FLAT:std::ctype<char>::`RTTI Class Hierarchy Descriptor'
+std::ctype_base::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::ctype_base `RTTI Type Descriptor' ; std::ctype_base::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 03H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::ctype_base::`RTTI Class Hierarchy Descriptor'
+std::ctype_base::`RTTI Base Class Array' DD FLAT:std::ctype_base::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::ctype_base::`RTTI Base Class Array'
+  DD FLAT:std::locale::facet::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::_Facet_base::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::_Crt_new_delete::`RTTI Base Class Descriptor at (4,-1,0,64)'
+std::ctype_base::`RTTI Class Hierarchy Descriptor' DD 00H ; std::ctype_base::`RTTI Class Hierarchy Descriptor'
+  DD 01H
+  DD 04H
+  DD FLAT:std::ctype_base::`RTTI Base Class Array'
+std::ctype_base `RTTI Type Descriptor' DD FLAT:const type_info::`vftable' ; std::ctype_base `RTTI Type Descriptor'
+  DD 00H
+  DB '. ?? std::AUctype_base', 00H
+const std::ctype_base::`RTTI Complete Object Locator' DD 00H ; std::ctype_base::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::ctype_base `RTTI Type Descriptor'
+  DD FLAT:std::ctype_base::`RTTI Class Hierarchy Descriptor'
+std::_Crt_new_delete::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::_Crt_new_delete `RTTI Type Descriptor' ; std::_Crt_new_delete::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 00H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::_Crt_new_delete::`RTTI Class Hierarchy Descriptor'
+std::_Crt_new_delete::`RTTI Base Class Array' DD FLAT:std::_Crt_new_delete::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::_Crt_new_delete::`RTTI Base Class Array'
+std::_Crt_new_delete::`RTTI Class Hierarchy Descriptor' DD 00H ; std::_Crt_new_delete::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 01H
+  DD FLAT:std::_Crt_new_delete::`RTTI Base Class Array'
+std::_Crt_new_delete `RTTI Type Descriptor' DD FLAT:const type_info::`vftable' ; std::_Crt_new_delete `RTTI Type Descriptor'
+  DD 00H
+  DB '. ?? std::AU_Crt_new_delete', 00H
+std::_Crt_new_delete::`RTTI Base Class Descriptor at (4,-1,0,64)' DD FLAT:std::_Crt_new_delete `RTTI Type Descriptor' ; std::_Crt_new_delete::`RTTI Base Class Descriptor at (4,-1,0,64)'
+  DD 00H
+  DD 04H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::_Crt_new_delete::`RTTI Class Hierarchy Descriptor'
+std::locale::facet::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::locale::facet `RTTI Type Descriptor' ; std::locale::facet::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 02H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::locale::facet::`RTTI Class Hierarchy Descriptor'
+std::locale::facet::`RTTI Base Class Array' DD FLAT:std::locale::facet::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::locale::facet::`RTTI Base Class Array'
+  DD FLAT:std::_Facet_base::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::_Crt_new_delete::`RTTI Base Class Descriptor at (4,-1,0,64)'
+std::locale::facet::`RTTI Class Hierarchy Descriptor' DD 00H ; std::locale::facet::`RTTI Class Hierarchy Descriptor'
+  DD 01H
+  DD 03H
+  DD FLAT:std::locale::facet::`RTTI Base Class Array'
+std::locale::facet `RTTI Type Descriptor' DD FLAT:const type_info::`vftable' ; std::locale::facet `RTTI Type Descriptor'
+  DD 00H
+  DB '. ?? std::locale::AVfacet', 00H
+const std::locale::facet::`RTTI Complete Object Locator' DD 00H ; std::locale::facet::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::locale::facet `RTTI Type Descriptor'
+  DD FLAT:std::locale::facet::`RTTI Class Hierarchy Descriptor'
+std::_Facet_base::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::_Facet_base `RTTI Type Descriptor' ; std::_Facet_base::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 00H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::_Facet_base::`RTTI Class Hierarchy Descriptor'
+std::_Facet_base::`RTTI Base Class Array' DD FLAT:std::_Facet_base::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::_Facet_base::`RTTI Base Class Array'
+std::_Facet_base::`RTTI Class Hierarchy Descriptor' DD 00H ; std::_Facet_base::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 01H
+  DD FLAT:std::_Facet_base::`RTTI Base Class Array'
+std::_Facet_base `RTTI Type Descriptor' DD FLAT:const type_info::`vftable' ; std::_Facet_base `RTTI Type Descriptor'
+  DD 00H
+  DB '. ?? std::AV_Facet_base', 00H
+const std::_Facet_base::`RTTI Complete Object Locator' DD 00H ; std::_Facet_base::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::_Facet_base `RTTI Type Descriptor'
+  DD FLAT:std::_Facet_base::`RTTI Class Hierarchy Descriptor'
+std::bad_cast::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::bad_cast `RTTI Type Descriptor' ; std::bad_cast::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 01H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::bad_cast::`RTTI Class Hierarchy Descriptor'
+std::bad_cast::`RTTI Base Class Array' DD FLAT:std::bad_cast::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::bad_cast::`RTTI Base Class Array'
+  DD FLAT:std::exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
+std::bad_cast::`RTTI Class Hierarchy Descriptor' DD 00H ; std::bad_cast::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 02H
+  DD FLAT:std::bad_cast::`RTTI Base Class Array'
+const std::bad_cast::`RTTI Complete Object Locator' DD 00H ; std::bad_cast::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::bad_cast `RTTI Type Descriptor'
+  DD FLAT:std::bad_cast::`RTTI Class Hierarchy Descriptor'
+std::_Iostream_error_category2::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::_Iostream_error_category2 `RTTI Type Descriptor' ; std::_Iostream_error_category2::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 01H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::_Iostream_error_category2::`RTTI Class Hierarchy Descriptor'
+std::_Iostream_error_category2::`RTTI Base Class Array' DD FLAT:std::_Iostream_error_category2::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::_Iostream_error_category2::`RTTI Base Class Array'
+  DD FLAT:std::error_category::`RTTI Base Class Descriptor at (0,-1,0,64)'
+std::_Iostream_error_category2::`RTTI Class Hierarchy Descriptor' DD 00H ; std::_Iostream_error_category2::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 02H
+  DD FLAT:std::_Iostream_error_category2::`RTTI Base Class Array'
+std::_Iostream_error_category2 `RTTI Type Descriptor' DD FLAT:const type_info::`vftable' ; std::_Iostream_error_category2 `RTTI Type Descriptor'
+  DD 00H
+  DB '. ?? std::AV_Iostream_error_category2', 00H
+const std::_Iostream_error_category2::`RTTI Complete Object Locator' DD 00H ; std::_Iostream_error_category2::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::_Iostream_error_category2 `RTTI Type Descriptor'
+  DD FLAT:std::_Iostream_error_category2::`RTTI Class Hierarchy Descriptor'
+std::system_error::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::system_error `RTTI Type Descriptor' ; std::system_error::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 03H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::system_error::`RTTI Class Hierarchy Descriptor'
+std::system_error::`RTTI Base Class Array' DD FLAT:std::system_error::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::system_error::`RTTI Base Class Array'
+  DD FLAT:std::_System_error::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::runtime_error::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
+std::system_error::`RTTI Class Hierarchy Descriptor' DD 00H ; std::system_error::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 04H
+  DD FLAT:std::system_error::`RTTI Base Class Array'
+const std::system_error::`RTTI Complete Object Locator' DD 00H ; std::system_error::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::system_error `RTTI Type Descriptor'
+  DD FLAT:std::system_error::`RTTI Class Hierarchy Descriptor'
+std::_System_error::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::_System_error `RTTI Type Descriptor' ; std::_System_error::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 02H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::_System_error::`RTTI Class Hierarchy Descriptor'
+std::_System_error::`RTTI Base Class Array' DD FLAT:std::_System_error::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::_System_error::`RTTI Base Class Array'
+  DD FLAT:std::runtime_error::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
+std::_System_error::`RTTI Class Hierarchy Descriptor' DD 00H ; std::_System_error::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 03H
+  DD FLAT:std::_System_error::`RTTI Base Class Array'
+const std::_System_error::`RTTI Complete Object Locator' DD 00H ; std::_System_error::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::_System_error `RTTI Type Descriptor'
+  DD FLAT:std::_System_error::`RTTI Class Hierarchy Descriptor'
+std::error_category::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::error_category `RTTI Type Descriptor' ; std::error_category::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 00H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::error_category::`RTTI Class Hierarchy Descriptor'
+std::error_category::`RTTI Base Class Array' DD FLAT:std::error_category::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::error_category::`RTTI Base Class Array'
+std::runtime_error::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::runtime_error `RTTI Type Descriptor' ; std::runtime_error::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 01H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::runtime_error::`RTTI Class Hierarchy Descriptor'
+std::runtime_error::`RTTI Base Class Array' DD FLAT:std::runtime_error::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::runtime_error::`RTTI Base Class Array'
+  DD FLAT:std::exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
+std::runtime_error::`RTTI Class Hierarchy Descriptor' DD 00H ; std::runtime_error::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 02H
+  DD FLAT:std::runtime_error::`RTTI Base Class Array'
+const std::runtime_error::`RTTI Complete Object Locator' DD 00H ; std::runtime_error::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::runtime_error `RTTI Type Descriptor'
+  DD FLAT:std::runtime_error::`RTTI Class Hierarchy Descriptor'
+std::bad_array_new_length::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::bad_array_new_length `RTTI Type Descriptor' ; std::bad_array_new_length::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 02H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::bad_array_new_length::`RTTI Class Hierarchy Descriptor'
+std::bad_array_new_length::`RTTI Base Class Array' DD FLAT:std::bad_array_new_length::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::bad_array_new_length::`RTTI Base Class Array'
+  DD FLAT:std::bad_alloc::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
+std::bad_array_new_length::`RTTI Class Hierarchy Descriptor' DD 00H ; std::bad_array_new_length::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 03H
+  DD FLAT:std::bad_array_new_length::`RTTI Base Class Array'
+const std::bad_array_new_length::`RTTI Complete Object Locator' DD 00H ; std::bad_array_new_length::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::bad_array_new_length `RTTI Type Descriptor'
+  DD FLAT:std::bad_array_new_length::`RTTI Class Hierarchy Descriptor'
+std::bad_alloc::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::bad_alloc `RTTI Type Descriptor' ; std::bad_alloc::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 01H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::bad_alloc::`RTTI Class Hierarchy Descriptor'
+std::bad_alloc::`RTTI Base Class Array' DD FLAT:std::bad_alloc::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::bad_alloc::`RTTI Base Class Array'
+  DD FLAT:std::exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
+std::bad_alloc::`RTTI Class Hierarchy Descriptor' DD 00H ; std::bad_alloc::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 02H
+  DD FLAT:std::bad_alloc::`RTTI Base Class Array'
+const std::bad_alloc::`RTTI Complete Object Locator' DD 00H ; std::bad_alloc::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::bad_alloc `RTTI Type Descriptor'
+  DD FLAT:std::bad_alloc::`RTTI Class Hierarchy Descriptor'
+std::exception::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::exception `RTTI Type Descriptor' ; std::exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 00H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::exception::`RTTI Class Hierarchy Descriptor'
+std::exception::`RTTI Base Class Array' DD FLAT:std::exception::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::exception::`RTTI Base Class Array'
+std::exception::`RTTI Class Hierarchy Descriptor' DD 00H ; std::exception::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 01H
+  DD FLAT:std::exception::`RTTI Base Class Array'
+const std::exception::`RTTI Complete Object Locator' DD 00H ; std::exception::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::exception `RTTI Type Descriptor'
+  DD FLAT:std::exception::`RTTI Class Hierarchy Descriptor'
+std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> > `RTTI Type Descriptor' ; std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 04H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`RTTI Class Hierarchy Descriptor'
+std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`RTTI Base Class Array' DD FLAT:std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`RTTI Base Class Array'
+  DD FLAT:std::basic_istream<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::basic_ios<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,0,4,80)'
+  DD FLAT:std::ios_base::`RTTI Base Class Descriptor at (0,0,4,64)'
+  DD FLAT:std::_Iosb<int>::`RTTI Base Class Descriptor at (8,0,4,64)'
+std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`RTTI Class Hierarchy Descriptor' DD 00H ; std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 05H
+  DD FLAT:std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`RTTI Base Class Array'
+std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> > `RTTI Type Descriptor' DD FLAT:const type_info::`vftable' ; std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> > `RTTI Type Descriptor'
+  DD 00H
+  DB '.?AV?$basic_istringstream@DU?$char_traits@D@std@@V?$allo'
+  DB 'cator@D@2@@std@@', 00H
+const std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`RTTI Complete Object Locator' DD 00H ; std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`RTTI Complete Object Locator'
+  DD 060H
+  DD 04H
+  DD FLAT:std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> > `RTTI Type Descriptor'
+  DD FLAT:std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`RTTI Class Hierarchy Descriptor'
+std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> > `RTTI Type Descriptor' ; std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 01H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`RTTI Class Hierarchy Descriptor'
+std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`RTTI Base Class Array' DD FLAT:std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`RTTI Base Class Array'
+  DD FLAT:std::basic_streambuf<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)'
+std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`RTTI Class Hierarchy Descriptor' DD 00H ; std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 02H
+  DD FLAT:std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`RTTI Base Class Array'
+std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> > `RTTI Type Descriptor' DD FLAT:const type_info::`vftable' ; std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> > `RTTI Type Descriptor'
+  DD 00H
+  DB '.?AV?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocato'
+  DB 'r@D@2@@std@@', 00H
+const std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`RTTI Complete Object Locator' DD 00H ; std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> > `RTTI Type Descriptor'
+  DD FLAT:std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`RTTI Class Hierarchy Descriptor'
+std::_Iosb<int>::`RTTI Base Class Descriptor at (8,0,4,64)' DD FLAT:std::_Iosb<int> `RTTI Type Descriptor' ; std::_Iosb<int>::`RTTI Base Class Descriptor at (8,0,4,64)'
+  DD 00H
+  DD 08H
+  DD 00H
+  DD 04H
+  DD 040H
+  DD FLAT:std::_Iosb<int>::`RTTI Class Hierarchy Descriptor'
+std::ios_base::`RTTI Base Class Descriptor at (0,0,4,64)' DD FLAT:std::ios_base `RTTI Type Descriptor' ; std::ios_base::`RTTI Base Class Descriptor at (0,0,4,64)'
+  DD 01H
+  DD 00H
+  DD 00H
+  DD 04H
+  DD 040H
+  DD FLAT:std::ios_base::`RTTI Class Hierarchy Descriptor'
+std::basic_ios<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,0,4,80)' DD FLAT:std::basic_ios<char,std::char_traits<char> > `RTTI Type Descriptor' ; std::basic_ios<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,0,4,80)'
+  DD 02H
+  DD 00H
+  DD 00H
+  DD 04H
+  DD 050H
+  DD FLAT:std::basic_ios<char,std::char_traits<char> >::`RTTI Class Hierarchy Descriptor'
+std::basic_istream<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::basic_istream<char,std::char_traits<char> > `RTTI Type Descriptor' ; std::basic_istream<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 03H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::basic_istream<char,std::char_traits<char> >::`RTTI Class Hierarchy Descriptor'
+std::basic_istream<char,std::char_traits<char> >::`RTTI Base Class Array' DD FLAT:std::basic_istream<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::basic_istream<char,std::char_traits<char> >::`RTTI Base Class Array'
+  DD FLAT:std::basic_ios<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,0,4,80)'
+  DD FLAT:std::ios_base::`RTTI Base Class Descriptor at (0,0,4,64)'
+  DD FLAT:std::_Iosb<int>::`RTTI Base Class Descriptor at (8,0,4,64)'
+std::basic_istream<char,std::char_traits<char> >::`RTTI Class Hierarchy Descriptor' DD 00H ; std::basic_istream<char,std::char_traits<char> >::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 04H
+  DD FLAT:std::basic_istream<char,std::char_traits<char> >::`RTTI Base Class Array'
+std::basic_istream<char,std::char_traits<char> > `RTTI Type Descriptor' DD FLAT:const type_info::`vftable' ; std::basic_istream<char,std::char_traits<char> > `RTTI Type Descriptor'
+  DD 00H
+  DB '.?AV?$basic_istream@DU?$char_traits@D@std@@@std@@', 00H
+const std::basic_istream<char,std::char_traits<char> >::`RTTI Complete Object Locator' DD 00H ; std::basic_istream<char,std::char_traits<char> >::`RTTI Complete Object Locator'
+  DD 018H
+  DD 04H
+  DD FLAT:std::basic_istream<char,std::char_traits<char> > `RTTI Type Descriptor'
+  DD FLAT:std::basic_istream<char,std::char_traits<char> >::`RTTI Class Hierarchy Descriptor'
+std::basic_streambuf<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::basic_streambuf<char,std::char_traits<char> > `RTTI Type Descriptor' ; std::basic_streambuf<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 00H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::basic_streambuf<char,std::char_traits<char> >::`RTTI Class Hierarchy Descriptor'
+std::basic_streambuf<char,std::char_traits<char> >::`RTTI Base Class Array' DD FLAT:std::basic_streambuf<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::basic_streambuf<char,std::char_traits<char> >::`RTTI Base Class Array'
+std::basic_streambuf<char,std::char_traits<char> >::`RTTI Class Hierarchy Descriptor' DD 00H ; std::basic_streambuf<char,std::char_traits<char> >::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 01H
+  DD FLAT:std::basic_streambuf<char,std::char_traits<char> >::`RTTI Base Class Array'
+std::basic_streambuf<char,std::char_traits<char> > `RTTI Type Descriptor' DD FLAT:const type_info::`vftable' ; std::basic_streambuf<char,std::char_traits<char> > `RTTI Type Descriptor'
+  DD 00H
+  DB '.?AV?$basic_streambuf@DU?$char_traits@D@std@@@std@@', 00H
+const std::basic_streambuf<char,std::char_traits<char> >::`RTTI Complete Object Locator' DD 00H ; std::basic_streambuf<char,std::char_traits<char> >::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::basic_streambuf<char,std::char_traits<char> > `RTTI Type Descriptor'
+  DD FLAT:std::basic_streambuf<char,std::char_traits<char> >::`RTTI Class Hierarchy Descriptor'
+std::basic_ios<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::basic_ios<char,std::char_traits<char> > `RTTI Type Descriptor' ; std::basic_ios<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 02H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::basic_ios<char,std::char_traits<char> >::`RTTI Class Hierarchy Descriptor'
+std::basic_ios<char,std::char_traits<char> >::`RTTI Base Class Array' DD FLAT:std::basic_ios<char,std::char_traits<char> >::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::basic_ios<char,std::char_traits<char> >::`RTTI Base Class Array'
+  DD FLAT:std::ios_base::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD FLAT:std::_Iosb<int>::`RTTI Base Class Descriptor at (8,-1,0,64)'
+std::basic_ios<char,std::char_traits<char> >::`RTTI Class Hierarchy Descriptor' DD 00H ; std::basic_ios<char,std::char_traits<char> >::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 03H
+  DD FLAT:std::basic_ios<char,std::char_traits<char> >::`RTTI Base Class Array'
+std::basic_ios<char,std::char_traits<char> > `RTTI Type Descriptor' DD FLAT:const type_info::`vftable' ; std::basic_ios<char,std::char_traits<char> > `RTTI Type Descriptor'
+  DD 00H
+  DB '.?AV?$basic_ios@DU?$char_traits@D@std@@@std@@', 00H
+const std::basic_ios<char,std::char_traits<char> >::`RTTI Complete Object Locator' DD 00H ; std::basic_ios<char,std::char_traits<char> >::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::basic_ios<char,std::char_traits<char> > `RTTI Type Descriptor'
+  DD FLAT:std::basic_ios<char,std::char_traits<char> >::`RTTI Class Hierarchy Descriptor'
+std::_Iosb<int>::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::_Iosb<int> `RTTI Type Descriptor' ; std::_Iosb<int>::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 00H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::_Iosb<int>::`RTTI Class Hierarchy Descriptor'
+std::_Iosb<int>::`RTTI Base Class Array' DD FLAT:std::_Iosb<int>::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::_Iosb<int>::`RTTI Base Class Array'
+std::_Iosb<int>::`RTTI Class Hierarchy Descriptor' DD 00H ; std::_Iosb<int>::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 01H
+  DD FLAT:std::_Iosb<int>::`RTTI Base Class Array'
+std::_Iosb<int> `RTTI Type Descriptor' DD FLAT:const type_info::`vftable' ; std::_Iosb<int> `RTTI Type Descriptor'
+  DD 00H
+  DB '.?AV?$_Iosb@H@std@@', 00H
+std::_Iosb<int>::`RTTI Base Class Descriptor at (8,-1,0,64)' DD FLAT:std::_Iosb<int> `RTTI Type Descriptor' ; std::_Iosb<int>::`RTTI Base Class Descriptor at (8,-1,0,64)'
+  DD 00H
+  DD 08H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::_Iosb<int>::`RTTI Class Hierarchy Descriptor'
+std::ios_base::`RTTI Base Class Descriptor at (0,-1,0,64)' DD FLAT:std::ios_base `RTTI Type Descriptor' ; std::ios_base::`RTTI Base Class Descriptor at (0,-1,0,64)'
+  DD 01H
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+  DD 040H
+  DD FLAT:std::ios_base::`RTTI Class Hierarchy Descriptor'
+std::ios_base::`RTTI Base Class Array' DD FLAT:std::ios_base::`RTTI Base Class Descriptor at (0,-1,0,64)' ; std::ios_base::`RTTI Base Class Array'
+  DD FLAT:std::_Iosb<int>::`RTTI Base Class Descriptor at (8,-1,0,64)'
+std::ios_base::`RTTI Class Hierarchy Descriptor' DD 00H ; std::ios_base::`RTTI Class Hierarchy Descriptor'
+  DD 00H
+  DD 02H
+  DD FLAT:std::ios_base::`RTTI Base Class Array'
+std::ios_base `RTTI Type Descriptor' DD FLAT:const type_info::`vftable' ; std::ios_base `RTTI Type Descriptor'
+  DD 00H
+  DB '. ?? std::AVios_base', 00H
+const std::ios_base::`RTTI Complete Object Locator' DD 00H ; std::ios_base::`RTTI Complete Object Locator'
+  DD 00H
+  DD 00H
+  DD FLAT:std::ios_base `RTTI Type Descriptor'
+  DD FLAT:std::ios_base::`RTTI Class Hierarchy Descriptor'
+`string' DB 'vector too long', 00H ; `string'
+`string' DB 'invalid string position'
+  DB 00H ; `string'
+_DATA SEGMENT
+std::_Constexpr_immortalize_impl<std::_Iostream_error_category2> `std::_Iostream_error_category2 const & std::_Immortalize_memcpy_image<std::_Iostream_error_category2>(void)'::`2'::_Static DD FLAT:const std::_Iostream_error_category2::`vftable' ; `std::_Immortalize_memcpy_image<std::_Iostream_error_category2>'::`2'::_Static
+  DD 05H
+_DATA ENDS
+const std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`vbtable' DD 00H ; std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`vbtable'
+  DD 060H
+const std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`vftable' DD FLAT:const std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`RTTI Complete Object Locator' ; std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`vftable'
+  DD FLAT:[thunk]:virtual void * std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`vector deleting destructor'`vtordisp{4294967292,0}' (unsigned int)
+const std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`vftable' DD FLAT:const std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`RTTI Complete Object Locator' ; std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`vftable'
+  DD FLAT:virtual void * std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`vector deleting destructor'(unsigned int)
+  DD FLAT:virtual void std::basic_streambuf<char,std::char_traits<char> >::_Lock(void)
+  DD FLAT:virtual void std::basic_streambuf<char,std::char_traits<char> >::_Unlock(void)
+  DD FLAT:virtual int std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::overflow(int)
+  DD FLAT:virtual int std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::pbackfail(int)
+  DD FLAT:virtual __int64 std::basic_streambuf<char,std::char_traits<char> >::showmanyc(void)
+  DD FLAT:virtual int std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::underflow(void)
+  DD FLAT:virtual int std::basic_streambuf<char,std::char_traits<char> >::uflow(void)
+  DD FLAT:virtual __int64 std::basic_streambuf<char,std::char_traits<char> >::xsgetn(char *,__int64)
+  DD FLAT:virtual __int64 std::basic_streambuf<char,std::char_traits<char> >::xsputn(char const *,__int64)
+  DD FLAT:virtual std::fpos<_Mbstatet> std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::seekoff(__int64,int,int)
+  DD FLAT:virtual std::fpos<_Mbstatet> std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::seekpos(std::fpos<_Mbstatet>,int)
+  DD FLAT:virtual std::basic_streambuf<char,std::char_traits<char> > * std::basic_streambuf<char,std::char_traits<char> >::setbuf(char *,__int64)
+  DD FLAT:virtual int std::basic_streambuf<char,std::char_traits<char> >::sync(void)
+  DD FLAT:virtual void std::basic_streambuf<char,std::char_traits<char> >::imbue(std::locale const &)
+const std::basic_streambuf<char,std::char_traits<char> >::`vftable' DD FLAT:const std::basic_streambuf<char,std::char_traits<char> >::`RTTI Complete Object Locator' ; std::basic_streambuf<char,std::char_traits<char> >::`vftable'
+  DD FLAT:virtual void * std::basic_streambuf<char,std::char_traits<char> >::`vector deleting destructor'(unsigned int)
+  DD FLAT:virtual void std::basic_streambuf<char,std::char_traits<char> >::_Lock(void)
+  DD FLAT:virtual void std::basic_streambuf<char,std::char_traits<char> >::_Unlock(void)
+  DD FLAT:virtual int std::basic_streambuf<char,std::char_traits<char> >::overflow(int)
+  DD FLAT:virtual int std::basic_streambuf<char,std::char_traits<char> >::pbackfail(int)
+  DD FLAT:virtual __int64 std::basic_streambuf<char,std::char_traits<char> >::showmanyc(void)
+  DD FLAT:virtual int std::basic_streambuf<char,std::char_traits<char> >::underflow(void)
+  DD FLAT:virtual int std::basic_streambuf<char,std::char_traits<char> >::uflow(void)
+  DD FLAT:virtual __int64 std::basic_streambuf<char,std::char_traits<char> >::xsgetn(char *,__int64)
+  DD FLAT:virtual __int64 std::basic_streambuf<char,std::char_traits<char> >::xsputn(char const *,__int64)
+  DD FLAT:virtual std::fpos<_Mbstatet> std::basic_streambuf<char,std::char_traits<char> >::seekoff(__int64,int,int)
+  DD FLAT:virtual std::fpos<_Mbstatet> std::basic_streambuf<char,std::char_traits<char> >::seekpos(std::fpos<_Mbstatet>,int)
+  DD FLAT:virtual std::basic_streambuf<char,std::char_traits<char> > * std::basic_streambuf<char,std::char_traits<char> >::setbuf(char *,__int64)
+  DD FLAT:virtual int std::basic_streambuf<char,std::char_traits<char> >::sync(void)
+  DD FLAT:virtual void std::basic_streambuf<char,std::char_traits<char> >::imbue(std::locale const &)
+const std::basic_istream<char,std::char_traits<char> >::`vbtable' DD 00H ; std::basic_istream<char,std::char_traits<char> >::`vbtable'
+  DD 018H
+const std::basic_istream<char,std::char_traits<char> >::`vftable' DD FLAT:const std::basic_istream<char,std::char_traits<char> >::`RTTI Complete Object Locator' ; std::basic_istream<char,std::char_traits<char> >::`vftable'
+  DD FLAT:[thunk]:virtual void * std::basic_istream<char,std::char_traits<char> >::`vector deleting destructor'`vtordisp{4294967292,0}' (unsigned int)
+const std::basic_ios<char,std::char_traits<char> >::`vftable' DD FLAT:const std::basic_ios<char,std::char_traits<char> >::`RTTI Complete Object Locator' ; std::basic_ios<char,std::char_traits<char> >::`vftable'
+  DD FLAT:virtual void * std::basic_ios<char,std::char_traits<char> >::`vector deleting destructor'(unsigned int)
+__CT??_R0?AVfailure@ios_base@std@@@8??0failure@ios_base@std@@QAE@ABV012@@Z20 DD 00H
+  DD FLAT:std::ios_base::failure `RTTI Type Descriptor'
+  DD 00H
+  DD 0ffffffffH
+  ORG $+4
+  DD 014H
+  DD FLAT:std::ios_base::failure::failure(std::ios_base::failure const &)
+__CTA5 ?? std::ios_base::AVfailure DD 05H
+  DD FLAT:__CT??_R0?AVfailure@ios_base@std@@@8??0failure@ios_base@std@@QAE@ABV012@@Z20
+  DD FLAT:__CT??_R0?AVsystem_error@std@@@8??0system_error@std@@QAE@ABV01@@Z20
+  DD FLAT:__CT??_R0?AV_System_error@std@@@8??0_System_error@std@@QAE@ABV01@@Z20
+  DD FLAT:__CT??_R0?AVruntime_error@std@@@8??0runtime_error@std@@QAE@ABV01@@Z12
+  DD FLAT:__CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12
+__TI5 ?? std::ios_base::AVfailure DD 00H
+  DD FLAT:virtual std::ios_base::failure::~failure(void)
+  DD 00H
+  DD FLAT:__CTA5 ?? std::ios_base::AVfailure
+`string' DB 'ios_base::eofbit set', 00H ; `string'
+`string' DB 'ios_base::failbit set', 00H ; `string'
+`string' DB 'ios_base::badbit set', 00H ; `string'
+const std::ios_base::`vftable' DD FLAT:const std::ios_base::`RTTI Complete Object Locator' ; std::ios_base::`vftable'
+  DD FLAT:virtual void * std::ios_base::`vector deleting destructor'(unsigned int)
+const std::ios_base::failure::`vftable' DD FLAT:const std::ios_base::failure::`RTTI Complete Object Locator' ; std::ios_base::failure::`vftable'
+  DD FLAT:virtual void * std::ios_base::failure::`vector deleting destructor'(unsigned int)
+  DD FLAT:virtual char const * std::exception::what(void)const 
+const std::ctype<char>::`vftable' DD FLAT:const std::ctype<char>::`RTTI Complete Object Locator' ; std::ctype<char>::`vftable'
+  DD FLAT:virtual void * std::ctype<char>::`vector deleting destructor'(unsigned int)
+  DD FLAT:virtual void std::locale::facet::_Incref(void)
+  DD FLAT:virtual std::_Facet_base * std::locale::facet::_Decref(void)
+  DD FLAT:virtual char const * std::ctype<char>::do_tolower(char *,char const *)const 
+  DD FLAT:virtual char std::ctype<char>::do_tolower(char)const 
+  DD FLAT:virtual char const * std::ctype<char>::do_toupper(char *,char const *)const 
+  DD FLAT:virtual char std::ctype<char>::do_toupper(char)const 
+  DD FLAT:virtual char const * std::ctype<char>::do_widen(char const *,char const *,char *)const 
+  DD FLAT:virtual char std::ctype<char>::do_widen(char)const 
+  DD FLAT:virtual char const * std::ctype<char>::do_narrow(char const *,char const *,char,char *)const 
+  DD FLAT:virtual char std::ctype<char>::do_narrow(char,char)const 
+const std::ctype_base::`vftable' DD FLAT:const std::ctype_base::`RTTI Complete Object Locator' ; std::ctype_base::`vftable'
+  DD FLAT:virtual void * std::ctype_base::`vector deleting destructor'(unsigned int)
+  DD FLAT:virtual void std::locale::facet::_Incref(void)
+  DD FLAT:virtual std::_Facet_base * std::locale::facet::_Decref(void)
+`string' DB 00H ; `string'
+const std::locale::facet::`vftable' DD FLAT:const std::locale::facet::`RTTI Complete Object Locator' ; std::locale::facet::`vftable'
+  DD FLAT:virtual void * std::locale::facet::`vector deleting destructor'(unsigned int)
+  DD FLAT:virtual void std::locale::facet::_Incref(void)
+  DD FLAT:virtual std::_Facet_base * std::locale::facet::_Decref(void)
+`string' DB 'bad locale name', 00H ; `string'
+const std::_Facet_base::`vftable' DD FLAT:const std::_Facet_base::`RTTI Complete Object Locator' ; std::_Facet_base::`vftable'
+  DD FLAT:virtual void * std::_Facet_base::`vector deleting destructor'(unsigned int)
+  DD FLAT:__purecall
+  DD FLAT:__purecall
+__CT??_R0?AVbad_cast@std@@@8??0bad_cast@std@@QAE@ABV01@@Z12 DD 00H
+  DD FLAT:std::bad_cast `RTTI Type Descriptor'
+  DD 00H
+  DD 0ffffffffH
+  ORG $+4
+  DD 0cH
+  DD FLAT:std::bad_cast::bad_cast(std::bad_cast const &)
+__CTA2 ?? std::AVbad_cast DD 02H
+  DD FLAT:__CT??_R0?AVbad_cast@std@@@8??0bad_cast@std@@QAE@ABV01@@Z12
+  DD FLAT:__CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12
+__TI2 ?? std::AVbad_cast DD 00H
+  DD FLAT:virtual std::bad_cast::~bad_cast(void)
+  DD 00H
+  DD FLAT:__CTA2 ?? std::AVbad_cast
+`string' DB 'bad cast', 00H ; `string'
+const std::bad_cast::`vftable' DD FLAT:const std::bad_cast::`RTTI Complete Object Locator' ; std::bad_cast::`vftable'
+  DD FLAT:virtual void * std::bad_cast::`vector deleting destructor'(unsigned int)
+  DD FLAT:virtual char const * std::exception::what(void)const 
+char const * const `virtual std::basic_string<char,std::char_traits<char>,std::allocator<char> > std::_Iostream_error_category2::message(int)const '::`5'::_Iostream_error DB 069H ; `std::_Iostream_error_category2::message'::`5'::_Iostream_error
+  DB 06fH
+  DB 073H
+  DB 074H
+  DB 072H
+  DB 065H
+  DB 061H
+  DB 06dH
+  DB 020H
+  DB 073H
+  DB 074H
+  DB 072H
+  DB 065H
+  DB 061H
+  DB 06dH
+  DB 020H
+  DB 065H
+  DB 072H
+  DB 072H
+  DB 06fH
+  DB 072H
+  DB 00H
+`string' DB 'iostream', 00H ; `string'
+const std::system_error::`vftable' DD FLAT:const std::system_error::`RTTI Complete Object Locator' ; std::system_error::`vftable'
+  DD FLAT:virtual void * std::system_error::`vector deleting destructor'(unsigned int)
+  DD FLAT:virtual char const * std::exception::what(void)const 
+`string' DB ': ', 00H ; `string'
+const std::_System_error::`vftable' DD FLAT:const std::_System_error::`RTTI Complete Object Locator' ; std::_System_error::`vftable'
+  DD FLAT:virtual void * std::_System_error::`vector deleting destructor'(unsigned int)
+  DD FLAT:virtual char const * std::exception::what(void)const 
+const std::runtime_error::`vftable' DD FLAT:const std::runtime_error::`RTTI Complete Object Locator' ; std::runtime_error::`vftable'
+  DD FLAT:virtual void * std::runtime_error::`vector deleting destructor'(unsigned int)
+  DD FLAT:virtual char const * std::exception::what(void)const 
+`string' DB 'string too long', 00H ; `string'
+__CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12 DD 00H
+  DD FLAT:std::exception `RTTI Type Descriptor'
+  DD 00H
+  DD 0ffffffffH
+  ORG $+4
+  DD 0cH
+  DD FLAT:std::exception::exception(std::exception const &)
+__CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12 DD 010H
+  DD FLAT:std::bad_alloc `RTTI Type Descriptor'
+  DD 00H
+  DD 0ffffffffH
+  ORG $+4
+  DD 0cH
+  DD FLAT:std::bad_alloc::bad_alloc(std::bad_alloc const &)
+__CT??_R0?AVbad_array_new_length@std@@@8??0bad_array_new_length@std@@QAE@ABV01@@Z12 DD 00H
+  DD FLAT:std::bad_array_new_length `RTTI Type Descriptor'
+  DD 00H
+  DD 0ffffffffH
+  ORG $+4
+  DD 0cH
+  DD FLAT:std::bad_array_new_length::bad_array_new_length(std::bad_array_new_length const &)
+__CTA3 ?? std::AVbad_array_new_length DD 03H
+  DD FLAT:__CT??_R0?AVbad_array_new_length@std@@@8??0bad_array_new_length@std@@QAE@ABV01@@Z12
+  DD FLAT:__CT??_R0?AVbad_alloc@std@@@8??0bad_alloc@std@@QAE@ABV01@@Z12
+  DD FLAT:__CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12
+__TI3 ?? std::AVbad_array_new_length DD 00H
+  DD FLAT:virtual std::bad_array_new_length::~bad_array_new_length(void)
+  DD 00H
+  DD FLAT:__CTA3 ?? std::AVbad_array_new_length
+`string' DB 'bad array new length', 00H ; `string'
+const std::bad_array_new_length::`vftable' DD FLAT:const std::bad_array_new_length::`RTTI Complete Object Locator' ; std::bad_array_new_length::`vftable'
+  DD FLAT:virtual void * std::bad_array_new_length::`vector deleting destructor'(unsigned int)
+  DD FLAT:virtual char const * std::exception::what(void)const 
+const std::bad_alloc::`vftable' DD FLAT:const std::bad_alloc::`RTTI Complete Object Locator' ; std::bad_alloc::`vftable'
+  DD FLAT:virtual void * std::bad_alloc::`vector deleting destructor'(unsigned int)
+  DD FLAT:virtual char const * std::exception::what(void)const 
+`string' DB 'Unknown exception', 00H ; `string'
+const std::exception::`vftable' DD FLAT:const std::exception::`RTTI Complete Object Locator' ; std::exception::`vftable'
+  DD FLAT:virtual void * std::exception::`vector deleting destructor'(unsigned int)
+  DD FLAT:virtual char const * std::exception::what(void)const 
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$std::basic_string<char,std::char_traits<char>,std::allocator<char> > * std::_Uninitialized_move<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const,std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const,std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > &) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??$_Uninitialized_move@PAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@QAV10@0PAV10@AAV?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@0@@Z$0
+__ehfuncinfo$std::basic_string<char,std::char_traits<char>,std::allocator<char> > * std::_Uninitialized_move<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const,std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const,std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > &) DD 019930522H
+  DD 01H
+  DD FLAT:__unwindtable$std::basic_string<char,std::char_traits<char>,std::allocator<char> > * std::_Uninitialized_move<std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const,std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const,std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > &)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$std::basic_ostream<char,std::char_traits<char> >::sentry::sentry(std::basic_ostream<char,std::char_traits<char> > &) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@AAV12@@Z$0
+__ehfuncinfo$std::basic_ostream<char,std::char_traits<char> >::sentry::sentry(std::basic_ostream<char,std::char_traits<char> > &) DD 019930522H
+  DD 01H
+  DD FLAT:__unwindtable$std::basic_ostream<char,std::char_traits<char> >::sentry::sentry(std::basic_ostream<char,std::char_traits<char> > &)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__ehfuncinfo$std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base(void) DD 019930522H
+  DD 00H
+  DD 00H
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 05H
+voltbl SEGMENT
+voltbl ENDS
+__catchsym$?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ$3 DD 040H
+  DD 00H
+  DD 00H
+  DD FLAT:__catch$?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ$0
+__tryblocktable$std::basic_ostream<char,std::char_traits<char> > & std::basic_ostream<char,std::char_traits<char> >::flush(void) DD 01H
+  DD 01H
+  DD 02H
+  DD 01H
+  DD FLAT:__catchsym$?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ$3
+__unwindtable$std::basic_ostream<char,std::char_traits<char> > & std::basic_ostream<char,std::char_traits<char> >::flush(void) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ$2
+  DD 00H
+  DD 00H
+  DD 00H
+  DD 00H
+__ehfuncinfo$std::basic_ostream<char,std::char_traits<char> > & std::basic_ostream<char,std::char_traits<char> >::flush(void) DD 019930522H
+  DD 03H
+  DD FLAT:__unwindtable$std::basic_ostream<char,std::char_traits<char> > & std::basic_ostream<char,std::char_traits<char> >::flush(void)
+  DD 01H
+  DD FLAT:__tryblocktable$std::basic_ostream<char,std::char_traits<char> > & std::basic_ostream<char,std::char_traits<char> >::flush(void)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__catchsym$?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ$2 DD 040H
+  DD 00H
+  DD 00H
+  DD FLAT:__catch$?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ$0
+__unwindtable$void std::basic_ostream<char,std::char_traits<char> >::_Osfx(void) DD 0ffffffffH
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+__tryblocktable$void std::basic_ostream<char,std::char_traits<char> >::_Osfx(void) DD 00H
+  DD 00H
+  DD 01H
+  DD 01H
+  DD FLAT:__catchsym$?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ$2
+__ehfuncinfo$void std::basic_ostream<char,std::char_traits<char> >::_Osfx(void) DD 019930522H
+  DD 02H
+  DD FLAT:__unwindtable$void std::basic_ostream<char,std::char_traits<char> >::_Osfx(void)
+  DD 01H
+  DD FLAT:__tryblocktable$void std::basic_ostream<char,std::char_traits<char> >::_Osfx(void)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 05H
+voltbl SEGMENT
+voltbl ENDS
+__catchsym$??$_Emplace_reallocate@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AAEPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@QAV21@ABV21@@Z$2 DD 040H
+  DD 00H
+  DD 00H
+  DD FLAT:__catch$??$_Emplace_reallocate@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AAEPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@QAV21@ABV21@@Z$0
+__unwindtable$std::basic_string<char,std::char_traits<char>,std::allocator<char> > * std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::_Emplace_reallocate<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &>(std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &) DD 0ffffffffH
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+__tryblocktable$std::basic_string<char,std::char_traits<char>,std::allocator<char> > * std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::_Emplace_reallocate<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &>(std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &) DD 00H
+  DD 00H
+  DD 01H
+  DD 01H
+  DD FLAT:__catchsym$??$_Emplace_reallocate@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AAEPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@QAV21@ABV21@@Z$2
+__ehfuncinfo$std::basic_string<char,std::char_traits<char>,std::allocator<char> > * std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::_Emplace_reallocate<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &>(std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &) DD 019930522H
+  DD 02H
+  DD FLAT:__unwindtable$std::basic_string<char,std::char_traits<char>,std::allocator<char> > * std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::_Emplace_reallocate<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &>(std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)
+  DD 01H
+  DD FLAT:__tryblocktable$std::basic_string<char,std::char_traits<char>,std::allocator<char> > * std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::_Emplace_reallocate<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &>(std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$std::basic_istream<char,std::char_traits<char> >::sentry::sentry(std::basic_istream<char,std::char_traits<char> > &,bool) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??0sentry@?$basic_istream@DU?$char_traits@D@std@@@std@@QAE@AAV12@_N@Z$0
+__ehfuncinfo$std::basic_istream<char,std::char_traits<char> >::sentry::sentry(std::basic_istream<char,std::char_traits<char> > &,bool) DD 019930522H
+  DD 01H
+  DD FLAT:__unwindtable$std::basic_istream<char,std::char_traits<char> >::sentry::sentry(std::basic_istream<char,std::char_traits<char> > &,bool)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__ehfuncinfo$std::basic_istream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base(void) DD 019930522H
+  DD 00H
+  DD 00H
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 05H
+voltbl SEGMENT
+voltbl ENDS
+__ehfuncinfo$void std::_Deallocate<8,0>(void *,unsigned int) DD 019930522H
+  DD 00H
+  DD 00H
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 05H
+voltbl SEGMENT
+voltbl ENDS
+__ehfuncinfo$void std::_Destroy_range<std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > *,std::basic_string<char,std::char_traits<char>,std::allocator<char> > * const,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > &) DD 019930522H
+  DD 00H
+  DD 00H
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 05H
+voltbl SEGMENT
+voltbl ENDS
+__catchsym$??$?5DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAAV?$basic_istream@DU?$char_traits@D@std@@@0@AAV10@AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z$4 DD 040H
+  DD 00H
+  DD 00H
+  DD FLAT:__catch$??$?5DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAAV?$basic_istream@DU?$char_traits@D@std@@@0@AAV10@AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z$0
+__tryblocktable$std::basic_istream<char,std::char_traits<char> > & std::operator>><char,std::char_traits<char>,std::allocator<char> >(std::basic_istream<char,std::char_traits<char> > &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > &) DD 02H
+  DD 02H
+  DD 03H
+  DD 01H
+  DD FLAT:__catchsym$??$?5DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAAV?$basic_istream@DU?$char_traits@D@std@@@0@AAV10@AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z$4
+__unwindtable$std::basic_istream<char,std::char_traits<char> > & std::operator>><char,std::char_traits<char>,std::allocator<char> >(std::basic_istream<char,std::char_traits<char> > &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > &) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??$?5DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAAV?$basic_istream@DU?$char_traits@D@std@@@0@AAV10@AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z$2
+  DD 00H
+  DD FLAT:__unwindfunclet$??$?5DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAAV?$basic_istream@DU?$char_traits@D@std@@@0@AAV10@AAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z$3
+  DD 00H
+  DD 00H
+  DD 00H
+  DD 00H
+__ehfuncinfo$std::basic_istream<char,std::char_traits<char> > & std::operator>><char,std::char_traits<char>,std::allocator<char> >(std::basic_istream<char,std::char_traits<char> > &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > &) DD 019930522H
+  DD 04H
+  DD FLAT:__unwindtable$std::basic_istream<char,std::char_traits<char> > & std::operator>><char,std::char_traits<char>,std::allocator<char> >(std::basic_istream<char,std::char_traits<char> > &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > &)
+  DD 01H
+  DD FLAT:__tryblocktable$std::basic_istream<char,std::char_traits<char> > & std::operator>><char,std::char_traits<char>,std::allocator<char> >(std::basic_istream<char,std::char_traits<char> > &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > &)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__ehfuncinfo$void std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::_Tidy(void) DD 019930522H
+  DD 00H
+  DD 00H
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 05H
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,int) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??0?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@H@Z$0
+__ehfuncinfo$std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,int) DD 019930522H
+  DD 01H
+  DD FLAT:__unwindtable$std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,int)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,int) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??0?$basic_istringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@H@Z$0
+  DD 00H
+  DD FLAT:__unwindfunclet$??0?$basic_istringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@H@Z$1
+__ehfuncinfo$std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,int) DD 019930522H
+  DD 02H
+  DD FLAT:__unwindtable$std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,int)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__catchsym$?_Ipfx@?$basic_istream@DU?$char_traits@D@std@@@std@@QAE_N_N@Z$3 DD 040H
+  DD 00H
+  DD 00H
+  DD FLAT:__catch$?_Ipfx@?$basic_istream@DU?$char_traits@D@std@@@std@@QAE_N_N@Z$0
+__tryblocktable$bool std::basic_istream<char,std::char_traits<char> >::_Ipfx(bool) DD 01H
+  DD 01H
+  DD 02H
+  DD 01H
+  DD FLAT:__catchsym$?_Ipfx@?$basic_istream@DU?$char_traits@D@std@@@std@@QAE_N_N@Z$3
+__unwindtable$bool std::basic_istream<char,std::char_traits<char> >::_Ipfx(bool) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$?_Ipfx@?$basic_istream@DU?$char_traits@D@std@@@std@@QAE_N_N@Z$2
+  DD 0ffffffffH
+  DD 00H
+  DD 0ffffffffH
+  DD 00H
+__ehfuncinfo$bool std::basic_istream<char,std::char_traits<char> >::_Ipfx(bool) DD 019930522H
+  DD 03H
+  DD FLAT:__unwindtable$bool std::basic_istream<char,std::char_traits<char> >::_Ipfx(bool)
+  DD 01H
+  DD FLAT:__tryblocktable$bool std::basic_istream<char,std::char_traits<char> >::_Ipfx(bool)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$std::basic_istream<char,std::char_traits<char> >::basic_istream<char,std::char_traits<char> >(std::basic_streambuf<char,std::char_traits<char> > *,bool) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??0?$basic_istream@DU?$char_traits@D@std@@@std@@QAE@PAV?$basic_streambuf@DU?$char_traits@D@std@@@1@_N@Z$0
+__ehfuncinfo$std::basic_istream<char,std::char_traits<char> >::basic_istream<char,std::char_traits<char> >(std::basic_streambuf<char,std::char_traits<char> > *,bool) DD 019930522H
+  DD 01H
+  DD FLAT:__unwindtable$std::basic_istream<char,std::char_traits<char> >::basic_istream<char,std::char_traits<char> >(std::basic_streambuf<char,std::char_traits<char> > *,bool)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$char std::basic_ios<char,std::char_traits<char> >::widen(char)const  DD 0ffffffffH
+  DD FLAT:__unwindfunclet$?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QBEDD@Z$0
+__ehfuncinfo$char std::basic_ios<char,std::char_traits<char> >::widen(char)const  DD 019930522H
+  DD 01H
+  DD FLAT:__unwindtable$char std::basic_ios<char,std::char_traits<char> >::widen(char)const 
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__ehfuncinfo$void std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::_Tidy(void) DD 019930522H
+  DD 00H
+  DD 00H
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 05H
+voltbl SEGMENT
+  DDSymXIndex: FLAT:__unwindfunclet$_main$0
+  DDSymXIndex: FLAT:_main
+  DDSymXIndex: FLAT:__unwindfunclet$?StringToWords@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z$0
+  DDSymXIndex: FLAT:std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > StringToWords(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)
+voltbl ENDS
+__unwindtable$_main DD 0ffffffffH
+  DD FLAT:__unwindfunclet$_main$0
+__unwindtable$std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > StringToWords(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$?StringToWords@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z$0
+  DD 00H
+  DD FLAT:__unwindfunclet$?StringToWords@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z$1
+  DD 01H
+  DD FLAT:__unwindfunclet$?StringToWords@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z$2
+__ehfuncinfo$_main DD 019930522H
+  DD 01H
+  DD FLAT:__unwindtable$_main
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+__ehfuncinfo$std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > StringToWords(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &) DD 019930522H
+  DD 03H
+  DD FLAT:__unwindtable$std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > StringToWords(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__ehfuncinfo$virtual std::ios_base::~ios_base(void) DD 019930522H
+  DD 00H
+  DD 00H
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 05H
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$std::ctype<char> const & std::use_facet<std::ctype<char> >(std::locale const &) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??$use_facet@V?$ctype@D@std@@@std@@YAABV?$ctype@D@0@ABVlocale@0@@Z$0
+  DD 00H
+  DD FLAT:__unwindfunclet$??$use_facet@V?$ctype@D@std@@@std@@YAABV?$ctype@D@0@ABVlocale@0@@Z$1
+__ehfuncinfo$std::ctype<char> const & std::use_facet<std::ctype<char> >(std::locale const &) DD 019930522H
+  DD 02H
+  DD FLAT:__unwindtable$std::ctype<char> const & std::use_facet<std::ctype<char> >(std::locale const &)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$static unsigned int std::ctype<char>::_Getcat(std::locale::facet const * *,std::locale const *) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$?_Getcat@?$ctype@D@std@@SAIPAPBVfacet@locale@2@PBV42@@Z$0
+  DD 00H
+  DD FLAT:__unwindfunclet$?_Getcat@?$ctype@D@std@@SAIPAPBVfacet@locale@2@PBV42@@Z$1
+  DD 0ffffffffH
+  DD FLAT:__unwindfunclet$?_Getcat@?$ctype@D@std@@SAIPAPBVfacet@locale@2@PBV42@@Z$1
+__ehfuncinfo$static unsigned int std::ctype<char>::_Getcat(std::locale::facet const * *,std::locale const *) DD 019930522H
+  DD 03H
+  DD FLAT:__unwindtable$static unsigned int std::ctype<char>::_Getcat(std::locale::facet const * *,std::locale const *)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$std::ctype<char>::ctype<char>(std::_Locinfo const &,unsigned int) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??0?$ctype@D@std@@QAE@ABV_Locinfo@1@I@Z$0
+__ehfuncinfo$std::ctype<char>::ctype<char>(std::_Locinfo const &,unsigned int) DD 019930522H
+  DD 01H
+  DD FLAT:__unwindtable$std::ctype<char>::ctype<char>(std::_Locinfo const &,unsigned int)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__ehfuncinfo$std::locale::locale(void) DD 019930522H
+  DD 00H
+  DD 00H
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 05H
+voltbl SEGMENT
+voltbl ENDS
+__ehfuncinfo$std::_Locinfo::~_Locinfo(void) DD 019930522H
+  DD 00H
+  DD 00H
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 05H
+voltbl SEGMENT
+voltbl ENDS
+__ehfuncinfo$std::_Locinfo::_Locinfo(char const *) DD 019930522H
+  DD 07H
+  DD FLAT:__unwindtable$std::_Locinfo::_Locinfo(char const *)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$std::system_error::system_error(std::error_code,char const *) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??0system_error@std@@QAE@Verror_code@1@PBD@Z$0
+__ehfuncinfo$std::system_error::system_error(std::error_code,char const *) DD 019930522H
+  DD 01H
+  DD FLAT:__unwindtable$std::system_error::system_error(std::error_code,char const *)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$std::_System_error::_System_error(std::error_code,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??0_System_error@std@@IAE@Verror_code@1@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z$1
+__ehfuncinfo$std::_System_error::_System_error(std::error_code,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &) DD 019930522H
+  DD 01H
+  DD FLAT:__unwindtable$std::_System_error::_System_error(std::error_code,std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$static std::basic_string<char,std::char_traits<char>,std::allocator<char> > std::_System_error::_Makestr(std::error_code,std::basic_string<char,std::char_traits<char>,std::allocator<char> >) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$?_Makestr@_System_error@std@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@Verror_code@2@V32@@Z$0
+  DD 00H
+  DD FLAT:__unwindfunclet$?_Makestr@_System_error@std@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@Verror_code@2@V32@@Z$1
+__ehfuncinfo$static std::basic_string<char,std::char_traits<char>,std::allocator<char> > std::_System_error::_Makestr(std::error_code,std::basic_string<char,std::char_traits<char>,std::allocator<char> >) DD 019930522H
+  DD 02H
+  DD FLAT:__unwindtable$static std::basic_string<char,std::char_traits<char>,std::allocator<char> > std::_System_error::_Makestr(std::error_code,std::basic_string<char,std::char_traits<char>,std::allocator<char> >)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__ehfuncinfo$void std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Tidy_deallocate(void) DD 019930522H
+  DD 00H
+  DD 00H
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 05H
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >(char const * const) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z$0
+__ehfuncinfo$std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >(char const * const) DD 019930522H
+  DD 01H
+  DD FLAT:__unwindtable$std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >(char const * const)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >(char const * const,unsigned int) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBDI@Z$0
+__ehfuncinfo$std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >(char const * const,unsigned int) DD 019930522H
+  DD 01H
+  DD FLAT:__unwindtable$std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >(char const * const,unsigned int)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+voltbl SEGMENT
+voltbl ENDS
+__unwindtable$std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &) DD 0ffffffffH
+  DD FLAT:__unwindfunclet$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z$0
+__ehfuncinfo$std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &) DD 019930522H
+  DD 01H
+  DD FLAT:__unwindtable$std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)
+  DD 2 DUP(00H)
+  DD 2 DUP(00H)
+  DD 00H
+  DD 01H
+
+_istr_stream$ = -228 ; size = 168
+_vec_words$ = -60 ; size = 12
+$T2 = -48 ; size = 4
+$T3 = -44 ; size = 4
+_buf$4 = -40 ; size = 24
+__$ArrayPad$ = -16 ; size = 4
+__$EHRec$ = -12 ; size = 12
+___$ReturnUdt$ = 8 ; size = 4
+_text$ = 12 ; size = 4
+std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > StringToWords(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &) PROC ; StringToWords
+  push ebp
+  mov ebp, esp
+  push -1
+  push __ehhandler$std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > StringToWords(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)
+  mov eax, DWORD PTR fs:0
+  push eax
+  sub esp, 216 ; 000000d8H
+  mov eax, DWORD PTR ___security_cookie
+  xor eax, ebp
+  mov DWORD PTR __$ArrayPad$[ebp], eax
+  push eax
+  lea eax, DWORD PTR __$EHRec$[ebp]
+  mov DWORD PTR fs:0, eax
+  mov DWORD PTR $T2[ebp], 0
+  lea ecx, DWORD PTR _vec_words$[ebp]
+  call std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >(void) ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
+  mov DWORD PTR __$EHRec$[ebp+8], 0
+  push 1
+  push 1
+  mov eax, DWORD PTR _text$[ebp]
+  push eax
+  lea ecx, DWORD PTR _istr_stream$[ebp]
+  call std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &,int) ; std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >
+  mov BYTE PTR __$EHRec$[ebp+8], 1
+  lea ecx, DWORD PTR _buf$4[ebp]
+  call std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >(void) ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
+  mov BYTE PTR __$EHRec$[ebp+8], 2
+$LN4@StringToWo:
+  lea ecx, DWORD PTR _buf$4[ebp]
+  push ecx
+  lea edx, DWORD PTR _istr_stream$[ebp]
+  push edx
+  call std::basic_istream<char,std::char_traits<char> > & std::operator>><char,std::char_traits<char>,std::allocator<char> >(std::basic_istream<char,std::char_traits<char> > &,std::basic_string<char,std::char_traits<char>,std::allocator<char> > &) ; std::operator>><char,std::char_traits<char>,std::allocator<char> >
+  add esp, 8
+  mov DWORD PTR $T3[ebp], eax
+  mov eax, DWORD PTR $T3[ebp]
+  mov ecx, DWORD PTR [eax]
+  mov edx, DWORD PTR $T3[ebp]
+  add edx, DWORD PTR [ecx+4]
+  mov ecx, edx
+  call std::ios_base::operator bool(void)const  ; std::ios_base::operator bool
+  movzx eax, al
+  test eax, eax
+  je SHORT $LN3@StringToWo
+  lea ecx, DWORD PTR _buf$4[ebp]
+  push ecx
+  lea ecx, DWORD PTR _vec_words$[ebp]
+  call void std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::push_back(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &) ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::push_back
+  jmp SHORT $LN4@StringToWo
+$LN3@StringToWo:
+  mov BYTE PTR __$EHRec$[ebp+8], 1
+  lea ecx, DWORD PTR _buf$4[ebp]
+  call std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >(void) ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  lea edx, DWORD PTR _vec_words$[ebp]
+  push edx
+  mov ecx, DWORD PTR ___$ReturnUdt$[ebp]
+  call std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >(std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > &&) ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
+  mov eax, DWORD PTR $T2[ebp]
+  or eax, 1
+  mov DWORD PTR $T2[ebp], eax
+  mov BYTE PTR __$EHRec$[ebp+8], 0
+  lea ecx, DWORD PTR _istr_stream$[ebp]
+  call void std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`vbase destructor'(void)
+  mov DWORD PTR __$EHRec$[ebp+8], -1
+  lea ecx, DWORD PTR _vec_words$[ebp]
+  call std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::~vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >(void) ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::~vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
+  mov eax, DWORD PTR ___$ReturnUdt$[ebp]
+  mov ecx, DWORD PTR __$EHRec$[ebp]
+  mov DWORD PTR fs:0, ecx
+  pop ecx
+  mov ecx, DWORD PTR __$ArrayPad$[ebp]
+  xor ecx, ebp
+  call @__security_check_cookie@4
+  mov esp, ebp
+  pop ebp
+  ret 0
+__unwindfunclet$?StringToWords@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z$0:
+  lea ecx, DWORD PTR _vec_words$[ebp]
+  jmp std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::~vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >(void) ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::~vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
+__unwindfunclet$?StringToWords@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z$1:
+  lea ecx, DWORD PTR _istr_stream$[ebp]
+  jmp void std::basic_istringstream<char,std::char_traits<char>,std::allocator<char> >::`vbase destructor'(void)
+__unwindfunclet$?StringToWords@@YA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z$2:
+  lea ecx, DWORD PTR _buf$4[ebp]
+  jmp std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >(void) ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  int 3
+  int 3
+  int 3
+  int 3
+  int 3
+__ehhandler$std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > StringToWords(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &):
+  npad 1
+  npad 1
+  mov edx, DWORD PTR [esp+8]
+  lea eax, DWORD PTR [edx+12]
+  mov ecx, DWORD PTR [edx-220]
+  xor ecx, eax
+  call @__security_check_cookie@4
+  mov ecx, DWORD PTR [edx-4]
+  xor ecx, eax
+  call @__security_check_cookie@4
+  mov eax, OFFSET __ehfuncinfo$std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > StringToWords(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &)
+  jmp ___CxxFrameHandler3
+std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > StringToWords(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &) ENDP ; StringToWords
+
+_v_words$ = -56 ; size = 12
+$T2 = -44 ; size = 4
+_text$ = -40 ; size = 24
+__$ArrayPad$ = -16 ; size = 4
+__$EHRec$ = -12 ; size = 12
+_main PROC
+  push ebp
+  mov ebp, esp
+  push -1
+  push __ehhandler$_main
+  mov eax, DWORD PTR fs:0
+  push eax
+  sub esp, 44 ; 0000002cH
+  mov eax, DWORD PTR ___security_cookie
+  xor eax, ebp
+  mov DWORD PTR __$ArrayPad$[ebp], eax
+  push eax
+  lea eax, DWORD PTR __$EHRec$[ebp]
+  mov DWORD PTR fs:0, eax
+  push OFFSET $SG35384
+  lea ecx, DWORD PTR _text$[ebp]
+  call std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >(char const * const) ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
+  mov DWORD PTR __$EHRec$[ebp+8], 0
+  lea eax, DWORD PTR _text$[ebp]
+  push eax
+  lea ecx, DWORD PTR _v_words$[ebp]
+  push ecx
+  call std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > > StringToWords(std::basic_string<char,std::char_traits<char>,std::allocator<char> > const &) ; StringToWords
+  add esp, 8
+  mov DWORD PTR $T2[ebp], 0
+  lea ecx, DWORD PTR _v_words$[ebp]
+  call std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::~vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >(void) ; std::vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >::~vector<std::basic_string<char,std::char_traits<char>,std::allocator<char> >,std::allocator<std::basic_string<char,std::char_traits<char>,std::allocator<char> > > >
+  mov DWORD PTR __$EHRec$[ebp+8], -1
+  lea ecx, DWORD PTR _text$[ebp]
+  call std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >(void) ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  mov eax, DWORD PTR $T2[ebp]
+  mov ecx, DWORD PTR __$EHRec$[ebp]
+  mov DWORD PTR fs:0, ecx
+  pop ecx
+  mov ecx, DWORD PTR __$ArrayPad$[ebp]
+  xor ecx, ebp
+  call @__security_check_cookie@4
+  mov esp, ebp
+  pop ebp
+  ret 0
+__unwindfunclet$_main$0:
+  lea ecx, DWORD PTR _text$[ebp]
+  jmp std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >(void) ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+  int 3
+  int 3
+  int 3
+  int 3
+  int 3
+__ehhandler$_main:
+  npad 1
+  npad 1
+  mov edx, DWORD PTR [esp+8]
+  lea eax, DWORD PTR [edx+12]
+  mov ecx, DWORD PTR [edx-48]
+  xor ecx, eax
+  call @__security_check_cookie@4
+  mov ecx, DWORD PTR [edx-4]
+  xor ecx, eax
+  call @__security_check_cookie@4
+  mov eax, OFFSET __ehfuncinfo$_main
+  jmp ___CxxFrameHandler3
+_main ENDP
