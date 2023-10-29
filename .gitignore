@@ -30,3 +30,17 @@
 *.exe
 *.out
 *.app
+/.vs/Libraries/FileContentIndex
+/.vs/Libraries/v17/ipch/AutoPCH
+*.suo
+*.db
+/.vs/Libraries/v17
+*.tlog
+/Libraries/Debug
+/Libraries/x64/Debug
+/x64/Debug
+*.sln
+*.vcxproj
+*.filters
+*.user
+*.json

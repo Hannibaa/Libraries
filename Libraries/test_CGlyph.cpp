@@ -6,16 +6,29 @@
 
 int main() {
 
+	// constructor will remove other words
 	text::CWord    words{ "hello this mine", ESC::Colors::_RED_BG };
+	text::CWord    word2{ "    this my name " };
 
-	std::cout << "this word : [" << words <<"]\n";
+	std::cout << "this word1 : [" << words <<"]\n";
+	std::cout << "this word2 : [" << word2 <<"]\n";
 
+	// change the colors of word1 
 	words.set_color(ESC::Colors::_GREEN_FG);
 
+	// We want to set first char with red:
+	word2.set_color(ESC::Colors::_YELLOW_BG,0,1);
+	std::cout << "this word2 : [" << word2 <<"]\n";
 
-	std::cout << " ad this is ";
+	std::cout << "words with other color: ";
 
 	std::cout << words << end_;
+
+	// now with call these two words in sentenses:
+	newline_;
+	std::cout << "hello in color " << words << " and other this " << word2 << " end" << end_;
+
+	// convert string from the 
 
 	std::cin.get();
 	return 0;
