@@ -1,10 +1,12 @@
 /*
+                         Authur     : KADDA Aoues
                          My library :
 
 
                          1. container utility : namespace container_utility = cu::
                          2. associative container utility : namespace        acu::
                          3. file utility :                                  File::
+                                   3.1 make splite filer 31 / 10 / 2023
                          4. bitwise utility :                                Bit::
                          5. bitmap image utility :                          bmpf::
                          6. escape character utility :                       Esc::
