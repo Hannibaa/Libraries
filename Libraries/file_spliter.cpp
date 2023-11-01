@@ -1,15 +1,35 @@
+/*
+                   KADDA Aoues 
+
+				   1. file spliter and concataner
+				   2. 1 / 11 / 2023
+
+*/
+
 #include <iostream>
 #include <MyLib/opendialogfile.h>
 #include <MyLib/Console_Library/escape_code.h>
 #include <MyLib/CFile.h>
+#include <MyLib/chrono/to_day.h>   // using to day class to generate date.
+
 
 
 void generate_splite_file(File::CFile& file, size_t size) {
 
+	// the size shoud be inferieur of file.size;
+	if (size > file.size()) {
+		Print_(color::Red, "the size not appropriate") << end_;
+		return;
+	}
+
+	// make a name for file output 
+	std::string file_name = file.name() + "_" + Str::removeUnusefullCharAny(ToDay::String(), ":- ") + "_";
+
 	// create temperary temp_file from file
-	File::CFile temp_file(file, 0, 3333);
+	File::CFile temp_file(file,size);
 
-
+	temp_file.save_file(file.path() + "\\"+ file_name + "1");
+	Print_(color::Green, "file saved :") << temp_file.name() << end_;
 }
 
 
@@ -66,6 +86,7 @@ re_chose:
 	}
 	else {
 		print_ << "Error please chose 1 or 2\n";
+		chose = 0;
 		goto re_chose;
 	}
 
