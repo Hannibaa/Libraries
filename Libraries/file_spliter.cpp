@@ -1,6 +1,5 @@
 /*
                    KADDA Aoues 
-
 				   1. file spliter and concataner
 				   2. 1 / 11 / 2023
 
@@ -16,20 +15,59 @@
 
 void generate_splite_file(File::CFile& file, size_t size) {
 
+	const size_t file_size = file.size();
 	// the size shoud be inferieur of file.size;
-	if (size > file.size()) {
+	if (size > file_size) {
 		Print_(color::Red, "the size not appropriate") << end_;
 		return;
 	}
 
-	// make a name for file output 
-	std::string file_name = file.name() + "_" + Str::removeUnusefullCharAny(ToDay::String(), ":- ") + "_";
+	// calculate number of files
+	int n_files = file_size / size ;
+	size_t rest_size = file_size - n_files * size;
 
-	// create temperary temp_file from file
-	File::CFile temp_file(file,size);
+	Print_(color::Green, "Number of files generated is : ") << n_files << end_;
+	Print_(color::Green, "Last file should have : ") << rest_size << " bytes\n";
 
-	temp_file.save_file(file.path() + "\\"+ file_name + "1");
-	Print_(color::Green, "file saved :") << temp_file.name() << end_;
+	if (n_files > 20) {
+		Print_(color::Red, "Too much files generated, revisited input") << end_;
+	}
+
+	std::string str_time = Str::removeUnusefullCharAny(ToDay::String(), ":- ");
+	std::string file_name_ = file.name() + "_" + str_time + "_";
+
+	fs::path new_path{};
+	// making folder for files:
+	if (fs::create_directory(file.path() + "\\Splite_" + file.name() + "_" + str_time)) {
+		Print_(color::Green, "Success! Folder created for splited file") << end_;
+		new_path = file.path() + "\\Splite_" + file.name() + "_" + str_time;
+	}
+	else {
+		Print_(color::Red, "Failed?!!!, to creat folder splited") << end_;
+		return;
+	};
+
+	// iteration number of generated file:
+	for (int k = 0; k != n_files; ++k) {
+
+		// make a name for file output 
+		std::string file_name = file_name_ + std::to_string(k);
+
+		// create temperary temp_file from file
+		File::CFile temp_file(file, size , k * size);
+
+		temp_file.save_file(new_path.string() + "\\" + file_name);
+		Print_(color::Green, "file saved : ") <<COLOR(color::Red, file_name )<< end_;
+	}
+
+	if (rest_size != 0) {
+	          File::CFile tm_file(file, rest_size, (n_files - 1) * size);
+			  file_name_ += std::to_string(n_files);
+	          tm_file.save_file(new_path.string() + "\\" + file_name_);
+			  Print_(color::Green, "last file : ") << COLOR(color::Red, file_name_) << end_;
+	}
+
+	Print_(color::Yellow, "--------- End -------- End ---------- End ----------") << end_;
 }
 
 
@@ -43,8 +81,13 @@ int main() {
 	newline_;
 	Print_(color::Yellow, "Please press Entry to chose a file to be splited!") << end_;
 
+	wait_;
 	// file name in wchar_t 
 	auto filename = opendialog::OpenFile(L"chose file to be splited");
+
+	if (filename.empty()) {
+		Print_(color::Red, "There no file, exit.") << end_;
+	}
 
 	File::CFile file(filename);
 
