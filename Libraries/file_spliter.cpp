@@ -11,7 +11,12 @@
 #include <MyLib/CFile.h>
 #include <MyLib/chrono/to_day.h>   // using to day class to generate date.
 
+void assemble_splite_files(const fs::path& directory) {
 
+	// first get all file in this directory
+	// check if files have same suffix number and identity for some file
+	// generate a file : 
+}
 
 void generate_splite_file(File::CFile& file, size_t size) {
 
