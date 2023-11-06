@@ -38,8 +38,8 @@ void generate_splite_file(File::CFile& file, size_t size) {
 		Print_(color::Red, "Too much files generated, revisited input") << end_;
 	}
 
-	std::string str_time = Str::removeUnusefullCharAny(ToDay::String(), ":- ");
-	std::string file_name_ = file.name() + "_" + str_time + "_";
+	std::string str_time = Str::removeUnusefullCharAny(Time::ToDay::String(), ":- ");
+	std::string file_name_ = file.name().string() + "_" + str_time + "_";
 
 	fs::path new_path{};
 	// making folder for files:
