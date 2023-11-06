@@ -14,6 +14,8 @@
                                    7.1 we need to change get_text_word from using 
                                    vector to using map to avoid repetition.
                          8. Time utility                                    Time::
+                             8.1 to_day namespace and class
+                             8.2 functionality of time
                          9. Calender utility                            Calender::
                          10. meta programming lib                            mpl::
                          11. function utility mathematic and logic      Function::
