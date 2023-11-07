@@ -13,7 +13,7 @@
 
 const size_t MAX_FILES_GEN = 20;
 
-void splite_file(const fs::path& file_name, size_t Size, fs::path folder = std::string{}) {
+vecString splite_file(const fs::path& file_name, size_t Size, fs::path folder = std::string{}) {
 
 	// Here we suppose file_name well defined and Size well defined
 	// we create object CFile
@@ -33,7 +33,7 @@ void splite_file(const fs::path& file_name, size_t Size, fs::path folder = std::
 
 	// create a files in folder.
 
-	file.Splite_In(folder, Size, "splited");
+	return file.Splite_In(folder, Size, "splited");
 
 }
 
@@ -59,16 +59,18 @@ int main() {
 	Print_(color::Aqua, "did you like to splite file y/n ") << end_;
 	char yn{};
 	std::cin >> yn;
-	if (yn == 'n' || yn == 'N') return;  // end of exicution
+	if (yn == 'n' || yn == 'N') return 1;  // end of execution
 
 	size_t sz{};
 	Print_(color::Aqua, "enter the size to be spliting ") << end_;
 	std::cin >> sz;
 
-    
+	// calling of function 
+	splite_file(file_name, sz);
+	Print_(color::Green, "spliting finish") << end_;
 
-	// here check directory existing and splites files existing and appropriate names for original
-	// file.
+	// we should print file and their size to screen
+
 
 	wait_;
 	return 0;
