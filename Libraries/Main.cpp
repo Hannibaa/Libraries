@@ -1,6 +1,6 @@
 /*
-                         Authur     : KADDA Aoues
-                         My library :
+                         Authur       : KADDA Aoues
+                         My libraries :
 
 
                          1. container utility : namespace container_utility = cu::
@@ -22,6 +22,7 @@
                              11.1 function of clampings
                              11.2 function factorial and is based on Gamma 
                                   funcions familly.
+                             11.3 add clamp function
                          12. random variable utility                         RND::
                          13. variable transition                              vt::
                          14. geometry function and relation                geo2d:: 
