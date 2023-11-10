@@ -7,9 +7,10 @@
 
 int main() {
 	Print_(color::Green, "Testing Factorial , Run Time and Compile Time ") << end_;
-	print_ << "factorial of 0 " << Function::Factorial<0>::value << end_;
+	print_ << "factorial of 0 " << Fn::Factorial<0>::value << end_;
 	print_ << "factorial of 1 " << Function::Factorial<1>::value << end_;
 	print_ << "factorial of 6 " << Function::Factorial<10>::value << end_;
+	print_ << "factorial of 8 " << Fn::factorial_v<7> << end_;
 
 	const int N = 4;
 	newline_;
