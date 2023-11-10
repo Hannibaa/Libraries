@@ -33,20 +33,9 @@
 */
 
 
-#include <iostream>
-#include "MyLib/Console_Library/escape_code.h"
-
-
-using namespace std;
-
-
 int main()
 {
-	print_ << "hello"" world"     " this here_";
-	newline_;
 
 
-
-	cin.get();
 	return 0;
 }
