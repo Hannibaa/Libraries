@@ -13,27 +13,41 @@
 
 const size_t MAX_FILES_GEN = 20;
 
-vecString splite_file(const fs::path& file_name, size_t Size, fs::path folder = std::string{}) {
-
-	// Here we suppose file_name well defined and Size well defined
-	// we create object CFile
+void splite_file(const fs::path& file_name, size_t Size, fs::path folder = std::string{}) {
 	
 	File::CFile file{ file_name };
 
 	// will create folder at file position if there are no one:
 	if (folder.empty()) {
-		folder = file_name.parent_path().string() + "_" + Time::get_serial_at_time();
+		folder = file_name.parent_path().string() + "\\" + file_name.filename().string() + "_"
+			     + Time::get_serial_at_time();
 		fs::create_directory(folder);
 	}
-
+	print_ << "directory is : " << folder.string() << end_;
 	// calculate number of file will be generated 
 	// and rest file :
 	size_t n_files = file.size() / Size;
 	size_t rest_file = file.size() - n_files * Size;
-
+	
+	// make exception if number of file is too much : 
+	if (n_files > MAX_FILES_GEN) {
+		Print_(color::Red, "too much much file output ...") << end_;
+		return;
+	}
 	// create a files in folder.
 
-	return file.Splite_In(folder, Size, "splited");
+	std::string file_ = folder.string() + "\\"
+			             + "_" ;
+
+	for (size_t t = 0; t < n_files; ++t) {
+		print_ << "file n : "  << file_<< " " << t <<  end_;
+		file.save_region(file_ + "_" + std::to_string(t), t * Size, Size);
+	}
+
+	if (rest_file != 0) {
+		print_ << "file n : " << file_ << " " << n_files << end_;
+		file.save_region(file_ + "_" + std::to_string(n_files), n_files * Size, rest_file);
+	}
 
 }
 
@@ -41,32 +55,69 @@ void assemble_files(const fs::path& directory) {
 
 }
 
+fs::path get_file_and_check_size(size_t& _size) {
+__another:
+	// here we load file, check file existence and sizing
+	auto string_file = opendialog::OpenFile(L"open file to split it");
+	char yn{};
 
+	fs::path file_name{ string_file };
+
+	if (!File::file_propierty(file_name)) {
+		Print_(color::Red, "file not exist or failure to open") << end_;
+		Print_(color::Green, "did you like another file (y/n)") << end_;
+
+		std::cin >> yn;
+		if (yn == 'y' || yn == 'Y') goto __another;
+
+		return {};
+	}
+
+	size_t file_size = fs::file_size(file_name);
+
+	// checking and simulate spliting of file
+
+	size_t n_files{};
+	size_t rest_file{};
+
+	Print_(color::Aqua, "enter the size to be spliting ") << end_;
+	std::cin >> _size;
+
+
+	if (_size > file_size) {
+		Print_(color::Red, "there problemes of size spliting files") << end_;
+		goto __end;
+	}
+
+	n_files = file_size / _size;
+	rest_file = file_size - _size * n_files;
+
+	if (rest_file == 0) print_ << "number of file out : " << n_files << end_;
+	else print_ << "number of file out : " << n_files + 1 << end_;
+
+
+__end:
+	return file_name;
+}
 
 
 int main() {
 	Print_(color::Yellow, "******  KADDA Aoues sofware ware presente ******") << end_;
-	Print_(color::Yellow, "******  spliter version v 2.0 *****") << end_;
+	Print_(color::Yellow, "******  spliter version v 2.0             ******") << end_;
 
-	// here we load file, check file existence and sizing
-	auto file_name = opendialog::OpenFile(L"open file to split it");
 
-	fs::path file_name_{ file_name };
-	
-	File::file_propierty(file_name_);
+	size_t _size{};
+	auto file_name = get_file_and_check_size(_size);
 
-	newline_;
-	Print_(color::Aqua, "did you like to splite file y/n ") << end_;
-	char yn{};
-	std::cin >> yn;
-	if (yn == 'n' || yn == 'N') return 1;  // end of execution
+	if (file_name.empty()) {
+		Print_(color::Red, "is not valide file name") << end_;
+		return -1;
+	}
 
-	size_t sz{};
-	Print_(color::Aqua, "enter the size to be spliting ") << end_;
-	std::cin >> sz;
+	Print_(color::Green, "file : ") << COLOR(color::Red, file_name.string()) << end_;
 
 	// calling of function 
-	splite_file(file_name, sz);
+	splite_file(file_name, _size);
 	Print_(color::Green, "spliting finish") << end_;
 
 	// we should print file and their size to screen
