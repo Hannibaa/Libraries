@@ -42,6 +42,8 @@ void assemble_files(const fs::path& directory) {
 }
 
 
+
+
 int main() {
 	Print_(color::Yellow, "******  KADDA Aoues sofware ware presente ******") << end_;
 	Print_(color::Yellow, "******  spliter version v 2.0 *****") << end_;
@@ -51,9 +53,7 @@ int main() {
 
 	fs::path file_name_{ file_name };
 	
-
-	Print_(color::Green, "file name : "); Print_(color::Yellow, file_name_) << end_;
-	Print_(color::Green, "file size : "); Print_(color::Yellow, fs::file_size(file_name_)) << end_;
+	File::file_propierty(file_name_);
 
 	newline_;
 	Print_(color::Aqua, "did you like to splite file y/n ") << end_;
