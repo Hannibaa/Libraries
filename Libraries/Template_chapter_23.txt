@@ -1,0 +1,48 @@
+Chapter 23
+Template 
+                               Your quote here.
+                               --B. Stroustrup
+
+* Introduction and Overview
+* A Simple String Template
+       Definition a Template; Template Instantiation
+* Type Checking
+       Type Equivalence; Error Detection
+* Class Template Members
+       Data Members; Member Functions; Member Type Aliases; static Members; Member Types;
+       Member Templates; Friends
+* Function Templates
+       Function Template Arguments; Function Template Argument Deduction; Function Template 
+       Overloading
+* Template Aliases
+* Source Code Organization
+       Linkage
+* Advice
+
+
+
+23.1 Introduction and Overview
+
+  Templates provide direct support for generic programming (@3.4) in the form of programming using types
+as parameters. The C++ tempalte mechanism allows a type or value to be a parameter in the definition of a
+class, a function, or a type alias. Templates provide a straightforward way to represent a wide of general
+concepts and simple ways to combine them. The resulting classes and function can match handwritten, less
+general code in run-time and space efficiency.
+  A Template depends only on the properties that it  actually uses from its parameter types and does not
+require types used as arguments to be explicitly related. In particular, the argument types used for a 
+template need not be part of an inheritance hierarchy. Built-in types are acceptable and very common as 
+template arguments.
+  The composition offered by template is type-safe (no object can be implicitly used in a way that 
+disagrees with us definition), but unfortunately, a template's requirements on its arguments cannot be 
+simply and directly stated in code (@24.3).
+  Every major standard-library abstraction is represented as a template (for example, string, ostream, 
+regex, complex, list, map, unique_ptr, thread, future, tuple and function), and so are the key operations
+(for example, string comparisons, the output operator <<, complex arithmetic operation, list insertions
+and deletions, and sort()). This makes the library chapters (Part IV) of this book a rich source of 
+examples of templates and programming techniques relying on them.
+  Here, templates are introduced with the primary focus on techniques need for the design, implementation,
+and use of the standard library. The standard library requires a greater degree of generality, flexibility,
+and efficiency than does most software. Consequently, techniques that can be used in the design and 
+implementation of the standard library are effective and efficient in the design of solution to a wide 
+variety of problems. These techniques enable an implementer to hide sophisticated implementations behind
+simple interfaces and to expose complexity to the user when the user has a specific need for it.
