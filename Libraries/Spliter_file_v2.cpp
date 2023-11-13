@@ -11,45 +11,6 @@
 
 */
 
-const size_t MAX_FILES_GEN = 20;
-
-void splite_file(const fs::path& file_name, size_t Size, fs::path folder = std::string{}) {
-	
-	File::CFile file{ file_name };
-
-	// will create folder at file position if there are no one:
-	if (folder.empty()) {
-		folder = file_name.parent_path().string() + "\\" + file_name.filename().string() + "_"
-			     + Time::get_serial_at_time();
-		fs::create_directory(folder);
-	}
-	print_ << "directory is : " << folder.string() << end_;
-	// calculate number of file will be generated 
-	// and rest file :
-	size_t n_files = file.size() / Size;
-	size_t rest_file = file.size() - n_files * Size;
-	
-	// make exception if number of file is too much : 
-	if (n_files > MAX_FILES_GEN) {
-		Print_(color::Red, "too much much file output ...") << end_;
-		return;
-	}
-	// create a files in folder.
-
-	std::string file_ = folder.string() + "\\"
-			             + "_" ;
-
-	for (size_t t = 0; t < n_files; ++t) {
-		print_ << "file n : "  << file_<< " " << t <<  end_;
-		file.save_region(file_ + "_" + std::to_string(t), t * Size, Size);
-	}
-
-	if (rest_file != 0) {
-		print_ << "file n : " << file_ << " " << n_files << end_;
-		file.save_region(file_ + "_" + std::to_string(n_files), n_files * Size, rest_file);
-	}
-
-}
 
 void assemble_files(const fs::path& directory) {
 
@@ -117,7 +78,7 @@ int main() {
 	Print_(color::Green, "file : ") << COLOR(color::Red, file_name.string()) << end_;
 
 	// calling of function 
-	splite_file(file_name, _size);
+	File::splite_file(file_name, _size);
 	Print_(color::Green, "spliting finish") << end_;
 
 	// we should print file and their size to screen
