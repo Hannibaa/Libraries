@@ -7,6 +7,8 @@
                          2. associative container utility : namespace        acu::
                          3. file utility :                                  File::
                              3.1 make splite filer 31 / 10 / 2023
+                             3.2 add multiple functionality on it 11 / 11 / 2023
+                             3.3 finalize splite files as functions.
                          4. bitwise utility :                                Bit::
                          5. bitmap image utility :                          bmpf::
                          6. escape character utility :                       Esc::
