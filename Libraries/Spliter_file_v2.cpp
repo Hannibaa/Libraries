@@ -2,7 +2,6 @@
 #include <MyLib/opendialogfile.h>                // using opendialog windows
 #include <MyLib/Console_Library/escape_code.h>   // for text coloring
 #include <MyLib/CFile.h>						 // using class CFile
-#include <MyLib/chrono/to_day.h>                 // using to day class to generate date.
 
 /*
                 Author : KADDA Aoues 
@@ -12,8 +11,11 @@
 */
 
 
-void assemble_files(const fs::path& directory) {
+void assemble_files(const fs::path& directory, const std::string& name_of_file) {
 
+	auto vec_paths = File::get_files_directory(directory);
+
+	File::concate_files(vec_paths, directory.string() + "\\" + name_of_file);
 }
 
 fs::path get_file_and_check_size(size_t& _size) {
@@ -66,24 +68,60 @@ int main() {
 	Print_(color::Yellow, "******  KADDA Aoues sofware ware presente ******") << end_;
 	Print_(color::Yellow, "******  spliter version v 2.0             ******") << end_;
 
+	newline_;
 
-	size_t _size{};
-	auto file_name = get_file_and_check_size(_size);
+	Print_(color::Green, "[+1] splite file to many files.") << end_;
+	Print_(color::Green, "[+2] assemble a files in one file.") << end_;
+	newline_;
 
-	if (file_name.empty()) {
-		Print_(color::Red, "is not valide file name") << end_;
-		return -1;
+__start:
+
+	Print_(color::Green, "[+] chose option : ") << end_;
+	int option{};
+	std::cin >> option;
+
+	if (option == 1) {
+
+		size_t _size{};
+		auto file_name = get_file_and_check_size(_size);
+
+		if (file_name.empty()) {
+			Print_(color::Red, "is not valide file name") << end_;
+			return -1;
+		}
+
+		Print_(color::Green, "file : ") << COLOR(color::Red, file_name.string()) << end_;
+
+		// calling of function 
+		File::splite_file(file_name, _size);
+		Print_(color::Green, "spliting finish") << end_;
+
+		wait_;
+		return 1;
+	}
+	else if (option == 2) {
+__assembly:
+		auto _folder = opendialog::OpenFolder(L"chose folder where there splited files");
+
+		fs::path folder(_folder);
+
+		// check if is it folder and exist 
+		if (!fs::is_directory(folder)) {
+			Print_(color::Red, "this is not folder, chose another or exit :(y = another file/ n = exit") << end_;
+			char ch{};
+			std::cin >> ch;
+			if (ch == 'y' || ch == 'Y') goto __assembly;
+			return -1;
+		}
+
+		assemble_files(folder, "_Asm_files.as");
+		Print_(color::Green, "files is assembled, exit.") << end_;
+		return 2;
+	}
+	else {
+		Print_(color::Red, "Chose only 1 or 2, re-entry : ") << end_;
+		goto __start;
 	}
 
-	Print_(color::Green, "file : ") << COLOR(color::Red, file_name.string()) << end_;
-
-	// calling of function 
-	File::splite_file(file_name, _size);
-	Print_(color::Green, "spliting finish") << end_;
-
-	// we should print file and their size to screen
-
-
-	wait_;
 	return 0;
 }
