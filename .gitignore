@@ -50,3 +50,4 @@
 *.log
 *.pdb
 /Libraries/x64/Release/_IsIncrementalBuild
+/Libraries/data.bin
