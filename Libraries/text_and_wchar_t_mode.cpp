@@ -13,15 +13,12 @@ void _hline(int n) {
 
 void put_char_at(int x, int y, wchar_t w, color _color = color::White) {
 	wprint_ << MOVETO(x, y);
-	//wprint_ << w;
 	WPrint_(_color, w);
 }
 
 void put_string_at(int x, int y, const std::wstring& wstr, color _color = color::White) {
 	wprint_ << MOVETO(x, y);
-	//wprint_ << wstr;
 	WPrint_(_color, wstr);
-
 }
 
 int main()
@@ -38,7 +35,7 @@ int main()
 
 		++count;
 		if (count % fr == 0) {
-			wcls();
+			esc::wcls();
 			count = 0;
 		}
 		int _x = x(), _y = y();
@@ -83,7 +80,7 @@ int main()
 
 		   if (d < dist_min) {
 			   wwait_;
-			   wclear_line();
+			   esc::wclear_line();
 			   ++count_colusion;
 		   }
 
