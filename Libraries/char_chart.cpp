@@ -8,7 +8,7 @@
 
 int main()
 {
-	esc::init_wchar; 
+	INIT_WCHAR_TEXT;
 
 	esc::print_CharType_chart<char>();
 
