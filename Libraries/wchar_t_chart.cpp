@@ -9,7 +9,7 @@ int main()
 {
 	esc::init_wchar;
 
-	print_wchar_chart(0x1fff, 0x2fff);
+	esc::print_wchar_chart(0x1fff, 0x2fff);
 
 
 	std::cin.get();
