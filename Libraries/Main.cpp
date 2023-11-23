@@ -1,3 +1,12 @@
+/* 1. CodeLens is disabled : To disable CodeLens, choose Tools > Options > Text Editor > All Languages > CodeLens,
+//    and deselect the feature.
+// 2. Disable Automatic file restores : 
+      Select Tools > Options to open the Options dialog box.
+      On the Projects and Solution > General page, deselect Reopen documents on solution load.
+
+*/
+
+
 /*
                          Authur       : KADDA Aoues
                          My libraries :
@@ -59,6 +68,27 @@
  *
  **********************************************************************************/
 
+
+// ANOTHER ONE :
+
+ /*
+  *****************************************************************************
+  *                                                                           *
+  *                          Platform Independent                             *
+  *                        String function  Library                           *
+  *                                                                           *
+  * Author: KADDA Aoues - haoues_k@yahoo.fr - 2023                            *
+  *                                                                           *
+  * URL :                                                                     *
+  *                                                                           *
+  * Copyright notice:                                                         *
+  * Free use of the Library CFile                                             *
+  * is permitted under the guidelines and in accordance with the most current *
+  * version of the MIT License.                                               *
+  * http://www.opensource.org/licenses/MIT                                    *
+  *                                                                           *
+  *****************************************************************************
+ */
 
 int main()
 {
