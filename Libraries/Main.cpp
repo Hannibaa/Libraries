@@ -13,6 +13,8 @@
 
 
                          1. container utility : namespace container_utility = cu::
+                             1.1 printing function
+                             1.2 first Adaptor implemented
                          2. associative container utility : namespace        acu::
                          3. file utility :                                  File::
                              3.1 make splite filer 31 / 10 / 2023
