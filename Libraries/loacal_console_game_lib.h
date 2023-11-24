@@ -155,7 +155,7 @@ public:
 
 
 
-class FLetter {
+class MMatrix {
 
 	std::wstring      text;
 	float             x, y;
@@ -165,7 +165,7 @@ class FLetter {
 
 public:
 
-	FLetter(float _x, float _y, int clr, float sx = 1.5f, float sy = 1.0f)
+	MMatrix(float _x, float _y, int clr, float sx = 1.5f, float sy = 1.3f)
 		:text{ L"ABCDEFGHIJKLMNOPQRSTUVWXYZ" },
 		x{ _x },
 		y{ _y },
@@ -181,6 +181,10 @@ public:
 		y = b;
 	}
 
+	void setSpeedY(float vy) {
+		Ystep = vy;
+	}
+
 	void setText(std::wstring_view _text) {
 		text = _text;
 	}
@@ -189,12 +193,43 @@ public:
 		text.push_back(w);
 	}
 
-	void update() {
-		//y += Ystep;
-		//y = std::clamp<float>( y, 1, _height);
+	void update(int _crgb = 0) {
+		y += Ystep;
+		y = std::clamp<float>( y, 1, _height);
 		int _x = x; int _y = y;
-		wprint_ << MOVETO(_x, _y) << _wCOLOR_FG256(_color) << text[i()] << RESETMODE;
+		if (_crgb == 0) _crgb = _color;
+		if (_crgb > 254) {
+			y = RNG::Random::rand() % 10;
+			x = RNG::Random::rand() % 144;
+		}
+
+		wprint_ << MOVETO(_x, _y) << _wCOLOR_FG256(_crgb) << text[i()] << RESETMODE;
+		wprint_ << MOVETO(_x, _y - 1) << _wCOLOR_FG256(_crgb - 2) << text[i()] << RESETMODE;
+		wprint_ << MOVETO(_x, _y - 2) << _wCOLOR_FG256(_crgb - 4) << text[i()] << RESETMODE;
+		wprint_ << MOVETO(_x, _y - 3) << _wCOLOR_FG256(_crgb - 6) << text[i()] << RESETMODE;
 	}
 
 
+};
+
+
+class Elapsed_Time {
+
+	std::chrono::system_clock::time_point _start;
+	std::chrono::system_clock::time_point _end;
+	std::chrono::duration<float> _duration;
+
+public:
+
+	Elapsed_Time()
+		: _start{std::chrono::system_clock::now()}
+		, _end{}
+		, _duration{}
+	{}
+
+	float operator()() {
+		_duration =  std::chrono::system_clock::now() - _start;
+		_start = std::chrono::system_clock::now();
+		return _duration.count();
+	}
 };
