@@ -9,6 +9,26 @@ using namespace std::chrono_literals;
 constexpr int _width = 145;
 constexpr int _height = 35;
 
+template<size_t array_size, typename T >
+void retate_array_value(T valueU, T valueV, T* _U, T* _V) {
+
+	for (size_t k = array_size - 1; k != 0; --k)
+	{
+		_U[k] = _U[k - 1];
+		_V[k] = _V[k - 1];
+	}
+
+	_U[0] = valueU;
+	_V[0] = valueV;
+}
+
+template<typename Container>
+	requires requires {typename Container::value_type; }
+void rotate_container_value(Container& container, const typename Container::value_type& value)
+{
+
+}
+
 
 void put_string_at(int x, int y, const std::wstring& wstr, color _color = color::White) {
 	wprint_ << MOVETO(x, y);
@@ -155,25 +175,29 @@ public:
 
 
 
+#define GREY3    232
 class MMatrix {
 
 	std::wstring      text;
 	float             x, y;
 	float             Xstep, Ystep;
-	color             _color;
+	int               _color, _initial_color, N_CHAR;
 	RNG::RG<int>      i;
 
 public:
 
-	MMatrix(float _x, float _y, int clr, float sx = 1.5f, float sy = 1.3f)
+	MMatrix(float _x, float _y, int n_char = 12, int clr = GREY3, float sx = 1.5f, float sy = 1.9f)
 		:text{ L"ABCDEFGHIJKLMNOPQRSTUVWXYZ" },
 		x{ _x },
 		y{ _y },
 		Xstep{ sx },
 		Ystep{ sy },
-		_color{ static_cast<color>(clr) },
+		N_CHAR{ n_char },
 		i{ 0,26 }
-	{}
+	{
+		_initial_color = clr + 2 * N_CHAR;
+		_color = _initial_color;
+	}
 
 
 	void setValue(float a, float b) {
@@ -193,24 +217,115 @@ public:
 		text.push_back(w);
 	}
 
-	void update(int _crgb = 0) {
+	void update() {
+
 		y += Ystep;
-		y = std::clamp<float>( y, 1, _height);
+		y = std::clamp<float>(y, 1, _height + 3);
 		int _x = x; int _y = y;
-		if (_crgb == 0) _crgb = _color;
-		if (_crgb > 254) {
-			y = RNG::Random::rand() % 10;
+		if (y > _height) {
+			y = RNG::Random::rand() % 25;
 			x = RNG::Random::rand() % 144;
 		}
 
-		wprint_ << MOVETO(_x, _y) << _wCOLOR_FG256(_crgb) << text[i()] << RESETMODE;
-		wprint_ << MOVETO(_x, _y - 1) << _wCOLOR_FG256(_crgb - 2) << text[i()] << RESETMODE;
-		wprint_ << MOVETO(_x, _y - 2) << _wCOLOR_FG256(_crgb - 4) << text[i()] << RESETMODE;
-		wprint_ << MOVETO(_x, _y - 3) << _wCOLOR_FG256(_crgb - 6) << text[i()] << RESETMODE;
+
+		++_color;
+		if (_color > 255) {
+			_color = _initial_color;
+		}
+
+		for (int j = 0; j < N_CHAR; ++j) {
+			wprint_ << MOVETO(_x, _y - j) <<
+				_wCOLOR_FG256(_color - 2 * j) << text[i()] << RESETMODE;
+		}
+	}
+};
+
+
+template<size_t _N_CHAR>
+class Snake {
+
+	std::wstring      text;
+	float             x, y;
+	float             Xstep, Ystep;
+	int               _color, _initial_color, N_CHAR;
+	RNG::RG<int>      i;
+
+	int u[_N_CHAR], v[_N_CHAR];
+
+public:
+
+	Snake(float _x, float _y, int clr = GREY3, float sx = 1.5f, float sy = 1.9f)
+		:text{ L"ABCDEFGHIJKLMNOPQRSTUVWXYZ" },
+		x{ _x },
+		y{ _y },
+		Xstep{ sx },
+		Ystep{ sy },
+		N_CHAR{ _N_CHAR },
+		i{ 0,26 }
+	{
+		_initial_color = clr + 2 * N_CHAR;
+		_color = _initial_color;
+
+		for (size_t k = 0; k != _N_CHAR; ++k)
+		{
+			u[k] = x;  v[k] = y;
+		}
 	}
 
 
+	void setValue(float a, float b) {
+		x = a;
+		y = b;
+	}
+
+	void setSpeedY(float vy) {
+		Ystep = vy;
+	}
+
+	void setText(std::wstring_view _text) {
+		text = _text;
+	}
+
+	void setText(const wchar_t w) {
+		text.push_back(w);
+	}
+
+	void update() {
+		// Controle by key 
+		if (KeyPressed(VK_UP)) {
+			y -= Ystep;
+			retate_array_value<_N_CHAR, int>(x, y, u, v);
+		}
+
+		if (KeyPressed(VK_DOWN)) {
+			y += Ystep;
+			retate_array_value<_N_CHAR, int>(x, y, u, v);
+		}
+
+		if (KeyPressed(VK_RIGHT)) {
+			x += Xstep;
+			retate_array_value<_N_CHAR, int>(x, y, u, v);
+		}
+
+		if (KeyPressed(VK_LEFT)) {
+			x -= Xstep;
+			retate_array_value<_N_CHAR, int>(x, y, u, v);
+		}
+
+		// color controle
+		++_color;
+		if (_color > 255) {
+			_color = _initial_color;
+		}
+
+		//drawing 
+		for (int j = 0; j < _N_CHAR; ++j) {
+			wprint_ << MOVETO(u[j], v[j]) <<
+				_wCOLOR_FG256(_color - 2 * j) << text[i()] << RESETMODE;
+		}
+	}
 };
+
 
 
 class Elapsed_Time {
