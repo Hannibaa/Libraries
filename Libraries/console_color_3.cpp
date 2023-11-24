@@ -53,47 +53,48 @@ public:
 
 
 int main()
-{
-	    std::map<int, int>  _ansi_color;         
-		esc::make_color_map(_ansi_color, esc::_rgb_colors, 256);           
-		esc::InterContainer rgb2ansi(&_ansi_color);    
-
-
+{ 
 	INIT_WCHAR_TEXT;                                       // initialization of wchar_t text.
 	WINIT_CURSOR;                                          // hide the cursor.
 	std::chrono::milliseconds game_elapsetime_ms = 100ms;   // timing and speed.
 	wchar_t title[100]{};                                  // title console.
 
-
-	swprintf_s(title, L"  Game Moving Text number [%4d]| time ms [%d]%3.3f|%3.3f",
-		100, game_elapsetime_ms.count(), 10, 10);
-	put_string_at(30, 0, title, color::Red);
-	TITLE(title);
-
-	// checking colors: 
+	// Initializing the color converter from ansi to rgb
+	esc::make_color_map(esc::_ansi_color, esc::_rgb_colors, 256);           
 
 	
-	
-
-	int k{};
+	MMatrix m1(40.f, 3.f, 8);
+	float vy{};
+	uchar uc{8};
+	Elapsed_Time timer;
+	float frequency{ 1.f };
+	int __color{};
 
 	while (1) {
 		std::this_thread::sleep_for(game_elapsetime_ms);
 		esc::wcls();
 
-		 // RNG::Random::rand() % int(0xffffff);
-		k += 1000;
+		swprintf_s(title, L"  Game Moving Frame per sec [%5.3f] |Time[%d]|vs[%3.3f]|color[%8d]",
+			frequency, game_elapsetime_ms.count(), vy, __color);
+		put_string_at(30, 0, title, color::Red);
+		TITLE(title);
 
-		if (k > 0xffffff) k = 0;
 
-		int color = rgb2ansi[k];
+		uc += 10;
+		if (uc > 238) uc = 8;
+		__color = esc::rgb2ansi[RGB2INT(uc, uc, uc)];
 
-		WPrint_(color, "Hello World") << k ;
-
+		//WPrint_(esc::rgb2ansi[RGB2INT(uc, uc, uc)], L"Hello World")  ;
+		m1.update(__color);
+		//if (__color > 254) m1.setValue(50.f, 2.f);
 
 		if (KeyPressed(VK_ESCAPE)) break;
 
-		if (KeyPressed(VK_CONTROL)) {
+		if (KeyPressed(VK_UP)) { vy += 0.1f; m1.setSpeedY(vy); }
+		if (KeyPressed(VK_DOWN)) { vy -= 0.1f; m1.setSpeedY(vy); }
+
+
+		if (KeyPressed(VK_SPACE)) {
 			put_string_at(0, 2, L"Press up to move up");
 			put_string_at(0, 3, L"Press down to move down");
 			put_string_at(0, 4, L"Press right to move right");
@@ -104,9 +105,9 @@ int main()
 		// strategy of Game
 
 
-		//std::this_thread::sleep_for(game_elapsetime_ms);
+		frequency = 1.f / timer();
 	}
-
+	
 
 
 	std::wcout << _wCOLOR_BG256(12) << "Exit Game..." << wend_;
