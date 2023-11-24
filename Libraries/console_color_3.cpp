@@ -63,9 +63,9 @@ int main()
 	esc::make_color_map(esc::_ansi_color, esc::_rgb_colors, 256);           
 
 	
-	MMatrix m1(40.f, 3.f, 8);
+	MMatrix m1(40.f, 3.f);
 	float vy{};
-	uchar uc{8};
+	int uc{};
 	Elapsed_Time timer;
 	float frequency{ 1.f };
 	int __color{};
@@ -80,12 +80,12 @@ int main()
 		TITLE(title);
 
 
-		uc += 10;
-		if (uc > 238) uc = 8;
-		__color = esc::rgb2ansi[RGB2INT(uc, uc, uc)];
+		++uc;
+		if (uc > 41) uc = 0;
+		//__color = esc::rgb2ansi[RGB2INT(uc, uc, uc)];
 
-		//WPrint_(esc::rgb2ansi[RGB2INT(uc, uc, uc)], L"Hello World")  ;
-		m1.update(__color);
+		WPrint_( esc::CGreen[uc], L"\x2588\x2588\x2588\x2588\x2588\x2588");
+		m1.update();
 		//if (__color > 254) m1.setValue(50.f, 2.f);
 
 		if (KeyPressed(VK_ESCAPE)) break;
