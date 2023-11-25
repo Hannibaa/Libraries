@@ -11,8 +11,7 @@
 #include <iostream>
 #include <MyLib/containers.h>
 #include <MyLib/Console_Library/escape_code.h>
-#include "Interpolation_container_adaptor.h"
-
+#include <MyLib/container_utility.h>
 
 int main() {
 
