@@ -1,5 +1,9 @@
 #pragma once
 
+// TODO  add all possibly function and colors tips
+// TODO  add cleaning escape_code.h library and Unicode.h lib
+// TODO
+
 #include "MyLib/Console_Library/Event_Windows.h"
 #include "MyLib/random_variable.h"
 #include "MyLib/Console_Library/escape_code.h"
@@ -21,14 +25,6 @@ void retate_array_value(T valueU, T valueV, T* _U, T* _V) {
 	_U[0] = valueU;
 	_V[0] = valueV;
 }
-
-template<typename Container>
-	requires requires {typename Container::value_type; }
-void rotate_container_value(Container& container, const typename Container::value_type& value)
-{
-
-}
-
 
 void put_string_at(int x, int y, const std::wstring& wstr, color _color = color::White) {
 	wprint_ << MOVETO(x, y);
@@ -254,7 +250,7 @@ class Snake {
 
 public:
 
-	Snake(float _x, float _y, int clr = GREY3, float sx = 1.5f, float sy = 1.9f)
+	Snake(float _x, float _y, int clr = GREY3, float sx = 1.1f, float sy = 1.1f)
 		:text{ L"ABCDEFGHIJKLMNOPQRSTUVWXYZ" },
 		x{ _x },
 		y{ _y },
@@ -325,6 +321,75 @@ public:
 		}
 	}
 };
+
+
+template<size_t _N_CHAR>
+class Snake_1 {
+
+	std::wstring      text;
+	RV::SRV<float>    x, y;
+	int               _color, _initial_color, N_CHAR;
+	RNG::RG<int>      i;
+
+	int u[_N_CHAR], v[_N_CHAR];
+
+public:
+
+	Snake_1(float x0, float x1, float sx, 
+		float y0, float y1, float sy , int clr = GREY3)
+		:text{ L"ABCDEFGHIJKLMNOPQRSTUVWXYZ" },
+		x{ x0,x1,sx},
+		y{ y0, y1, sy },
+		N_CHAR{ _N_CHAR },
+		i{ 0,26 }
+	{
+		_initial_color = clr + 2 * N_CHAR;
+		_color = _initial_color;
+
+		for (size_t k = 0; k != _N_CHAR; ++k)
+		{
+			u[k] = x;  v[k] = y;
+		}
+	}
+
+	int* getPosition() const {
+		int p[2]{ u[0], v[0] };
+		return p;
+	}
+
+	void setPosition(float a, float b) {
+		x.start_value(a);
+		y.start_value(b);
+	}
+
+	void setText(std::wstring_view _text) {
+		text = _text;
+	}
+
+	void setText(const wchar_t w) {
+		text.push_back(w);
+	}
+
+	void update() {
+		// Controle by key 
+		int _x = x;
+		int _y = y;
+		retate_array_value<_N_CHAR,int>(_x, _y, u, v);
+
+		// color controle
+		++_color;
+		if (_color > 255) {
+			_color = _initial_color;
+		}
+
+		//drawing 
+		for (int j = 0; j < _N_CHAR; ++j) {
+			wprint_ << MOVETO(u[j], v[j]) <<
+				_wCOLOR_FG256(_color - 2 * j) << text[i()] << RESETMODE;
+		}
+	}
+};
+
 
 
 
