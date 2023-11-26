@@ -7,8 +7,33 @@
 #include "MyLib/Console_Library/Event_Windows.h"
 #include "MyLib/random_variable.h"
 #include "MyLib/Console_Library/escape_code.h"
+#include <array>
 
 using namespace std::chrono_literals;
+
+template<typename T>
+struct Point2d {
+	T x;
+	T y;
+
+	Point2d(T _x = T{}, T _y = T{}) : x{_x},y{_y}{}
+
+	T& operator[](size_t t) {
+		if (t == 0) return x;
+		if (t == 1) return y;
+		Print_(color::Red, "Undefined!!!") << end_;
+	}
+
+	T operator[](size_t t) const {
+		if (t == 0) return x;
+		if (t == 1) return y;
+		Print_(color::Red, "Undefined!!!") << end_;
+	}
+};
+
+using Pint = Point2d<int>;
+using Pfloat = Point2d<float>;
+
 
 constexpr int _width = 145;
 constexpr int _height = 35;
@@ -30,6 +55,12 @@ void put_string_at(int x, int y, const std::wstring& wstr, color _color = color:
 	wprint_ << MOVETO(x, y);
 	WPrint_(_color, wstr);
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//    
+// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Text {
 
@@ -73,7 +104,11 @@ public:
 	}
 };
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//    
+// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Text_ {
 
@@ -170,6 +205,11 @@ public:
 };
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//    MATRIXES CLASSES
+// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #define GREY3    232
 class MMatrix {
@@ -236,6 +276,11 @@ public:
 	}
 };
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//    SNAKES CLASSES
+// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 template<size_t _N_CHAR>
 class Snake {
@@ -352,9 +397,8 @@ public:
 		}
 	}
 
-	int* getPosition() const {
-		int p[2]{ u[0], v[0] };
-		return p;
+	Pint getPosition() const {
+		return Pint{ u[0],v[0] };
 	}
 
 	void setPosition(float a, float b) {
@@ -390,9 +434,17 @@ public:
 	}
 };
 
+template<typename T>
+requires std::integral<T>
+T sqrt_distance(const Point2d<T>& p1,  const Point2d<T>& p2) {
+	return (p1[0] - p2[0]) * (p1[0] - p2[0]) + (p1[1] - p2[1]) * (p1[1] - p2[1]);
+}
 
-
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//    Small class handle times elapsed in game loop
+// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Elapsed_Time {
 
 	std::chrono::system_clock::time_point _start;
@@ -411,5 +463,94 @@ public:
 		_duration =  std::chrono::system_clock::now() - _start;
 		_start = std::chrono::system_clock::now();
 		return _duration.count();
+	}
+};
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//    PROGRESS BAR 
+// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class IProgressBar {
+	// inerface abstract
+public:
+	virtual void draw() = 0;
+	virtual void setTitle(const std::wstring_view& title) = 0;
+
+	virtual ~IProgressBar() {}
+};
+
+class DProgressBar {
+	// data :
+	// 1. dimension of progress bar  x0 , y 0  to x1 ,y 1
+	Pint  _p0;
+	Pint  _p1;
+
+	// title affich
+	std::wstring _title;
+};
+
+class ProgressBar {
+
+	Pint         _position;
+	std::wstring _title;
+	int          _length;
+
+	float l;
+	size_t title_size;
+public:
+	ProgressBar(const Pint& position, const std::wstring_view title, int length)
+		:_position{position},
+		_title{title},
+		_length{length},
+		l{}
+	{
+		title_size = _title.size();
+	}
+
+	void setTitle(const std::wstring_view title) {
+		_title = title;
+		title_size = _title.size();
+	}
+
+	void set_value(float _l_percents) {
+		l = _l_percents * float(_length) / 100.f;
+		if (l > _length) l = float(_length);
+		if (l < 1.0) l = 1.f;
+	}
+
+	void progress(const float& t) {
+		if (l > float(_length)) {
+			return;
+		}
+		if ( l < 1) l = 1.0;
+		l += t;
+	}
+
+	void draw() {
+		// calculate percent of progression bar
+		size_t t = static_cast<size_t>(l);
+		int l_percent =static_cast<int>( 100.f * l / float(_length));
+		if (l_percent > 100) l_percent = 100;
+
+		// printing title and value
+		_title += L"   " + std::to_wstring(l_percent);
+		wprint_ << MOVETO(_position.x, _position.y)
+		        << _title ;
+		
+		size_t _size = _title.size();
+
+		wprint_ << MOVETO(_position.x, _position.y) 
+			    << _wCOLOR_BG256(color::Red);
+		if ( t > _size)
+			wprint_ << _title 
+			        << REPEAT(t - _size, L' ')
+			        << RESETMODE;
+		else
+			wprint_ << _title.substr(0,t)
+			        << RESETMODE;
+
+		_title = _title.substr(0, title_size);
 	}
 };
