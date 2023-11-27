@@ -257,10 +257,11 @@ public:
 
 		y += Ystep;
 		y = std::clamp<float>(y, 1, _height + 3);
-		int _x = x; int _y = y;
+
+		int _x = static_cast<int>(x); int _y =static_cast<int>(y);
 		if (y > _height) {
-			y = RNG::Random::rand() % 25;
-			x = RNG::Random::rand() % 144;
+			y = static_cast<float>(RNG::Random::rand() % 25);
+			x = static_cast<float>(RNG::Random::rand() % 144);
 		}
 
 
@@ -448,14 +449,12 @@ T sqrt_distance(const Point2d<T>& p1,  const Point2d<T>& p2) {
 class Elapsed_Time {
 
 	std::chrono::system_clock::time_point _start;
-	std::chrono::system_clock::time_point _end;
 	std::chrono::duration<float> _duration;
 
 public:
 
 	Elapsed_Time()
 		: _start{std::chrono::system_clock::now()}
-		, _end{}
 		, _duration{}
 	{}
 
@@ -476,40 +475,44 @@ class IProgressBar {
 	// inerface abstract
 public:
 	virtual void draw() = 0;
-	virtual void setTitle(const std::wstring_view& title) = 0;
+	virtual void setTitle(const std::wstring_view title) = 0;
 
 	virtual ~IProgressBar() {}
 };
 
 class DProgressBar {
+public:
 	// data :
 	// 1. dimension of progress bar  x0 , y 0  to x1 ,y 1
-	Pint  _p0;
-	Pint  _p1;
+	Pint          _position;  // position of bar
+	std::wstring   _title;	  // title of bar
+	int           _length;	  // length of progress bar
+	int           _color;     // color of progress bar.
 
-	// title affich
-	std::wstring _title;
+	DProgressBar(const Pint& position, const std::wstring& title, int length, int colour)
+		:_position{position}
+		, _title{title}
+		, _length{length}
+		, _color{colour}
+	{}
 };
 
-class ProgressBar {
-
-	Pint         _position;
-	std::wstring _title;
-	int          _length;
+class ProgressBar : private DProgressBar, public IProgressBar {
 
 	float l;
 	size_t title_size;
+	bool _option_2;
+
 public:
-	ProgressBar(const Pint& position, const std::wstring_view title, int length)
-		:_position{position},
-		_title{title},
-		_length{length},
-		l{}
+	ProgressBar(const Pint& position, const std::wstring& title, int length, int colour)
+		:DProgressBar(position,title, length,colour)
+		, l{}
+		, _option_2{false}
 	{
 		title_size = _title.size();
 	}
 
-	void setTitle(const std::wstring_view title) {
+	virtual void setTitle(const std::wstring_view title) {
 		_title = title;
 		title_size = _title.size();
 	}
@@ -528,21 +531,28 @@ public:
 		l += t;
 	}
 
-	void draw() {
+	virtual void draw() override {
 		// calculate percent of progression bar
 		size_t t = static_cast<size_t>(l);
 		int l_percent =static_cast<int>( 100.f * l / float(_length));
 		if (l_percent > 100) l_percent = 100;
 
-		// printing title and value
-		_title += L"   " + std::to_wstring(l_percent);
+		if (_option_2) {
+			wprint_ << MOVETO(_position.x + t,_position.y)
+				    << std::to_wstring(l_percent);
+		}
+		else {
+			// printing title and value
+			_title += L"   " + std::to_wstring(l_percent);
+		}
+
 		wprint_ << MOVETO(_position.x, _position.y)
 		        << _title ;
 		
 		size_t _size = _title.size();
 
 		wprint_ << MOVETO(_position.x, _position.y) 
-			    << _wCOLOR_BG256(color::Red);
+			    << _wCOLOR_BG256(_color);
 		if ( t > _size)
 			wprint_ << _title 
 			        << REPEAT(t - _size, L' ')
@@ -552,5 +562,62 @@ public:
 			        << RESETMODE;
 
 		_title = _title.substr(0, title_size);
+	}
+};
+
+class ProgressBarH: private DProgressBar, public IProgressBar {
+
+	int            _text_color;
+	int            _width_bar;
+	float          _l;
+	Pint           _delta_tx;
+	// TODO   set max_length_bar as static or as template pas to static constexpr.
+
+public:
+	ProgressBarH() = default;
+
+	ProgressBarH(const Pint& position, const std::wstring& title, int length,
+		         int color_bar, int color_text = 15)
+		: DProgressBar(position,title,length,color_bar)
+		, _text_color{color_text}
+		, _l{}
+		, _delta_tx{}
+	{
+		_width_bar = _title.size();
+		
+		// check if length of bar and screen with coordinate fit 
+		if (_length > _position.y - 2) _length = _position.y - 1;
+	}
+
+	virtual void setTitle(const std::wstring_view title) override {
+		_title = title;
+	}
+
+	void adjust_title(int x0, int y0) {
+		_delta_tx.x = x0;
+		_delta_tx.y = y0;
+	}
+
+	void set_width(int width) {
+		_width_bar = width;
+	}
+
+	// the value here is percentage
+	void set_value(float l_percents) {
+		_l = l_percents * float(_length) / 100.f;
+		_l = std::clamp<float>(_l,0,_length);
+	}
+
+	virtual void draw() override {
+		wprint_ << WMOVETO(_position.x - _delta_tx.x , _position.y + 1 + _delta_tx.y)
+			   << wCOLOR(_text_color, _title);
+
+		for (int i = 0; i < static_cast<int>(_l); ++i) {
+			wprint_ << WMOVETO(_position.x, _position.y - i)
+				    << _wCOLOR_BG256(_color) 
+				    << std::wstring(_width_bar, ' ')
+				    << RESETMODE;
+				    
+		}
 	}
 };
