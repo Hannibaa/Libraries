@@ -56,6 +56,11 @@ void put_string_at(int x, int y, const std::wstring& wstr, color _color = color:
 	WPrint_(_color, wstr);
 }
 
+void put_char_at(int x, int y, const char c, int _color) {
+	wprint_ << MOVETO(x, y);
+	WPrint_(_color, c);
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 
 //    
@@ -489,6 +494,8 @@ public:
 	int           _length;	  // length of progress bar
 	int           _color;     // color of progress bar.
 
+	virtual ~DProgressBar(){}
+
 	DProgressBar(const Pint& position, const std::wstring& title, int length, int colour)
 		:_position{position}
 		, _title{title}
@@ -569,6 +576,7 @@ class ProgressBarH: private DProgressBar, public IProgressBar {
 
 	int            _text_color;
 	int            _width_bar;
+	int            _bg_text_color;
 	float          _l;
 	Pint           _delta_tx;
 	// TODO   set max_length_bar as static or as template pas to static constexpr.
@@ -610,7 +618,7 @@ public:
 
 	virtual void draw() override {
 		wprint_ << WMOVETO(_position.x - _delta_tx.x , _position.y + 1 + _delta_tx.y)
-			   << wCOLOR(_text_color, _title);
+			   << WTEXT_COLOR(_text_color, _bg_text_color, _title);
 
 		for (int i = 0; i < static_cast<int>(_l); ++i) {
 			wprint_ << WMOVETO(_position.x, _position.y - i)
@@ -619,5 +627,13 @@ public:
 				    << RESETMODE;
 				    
 		}
+	}
+
+	void setBackground_color(int bg) {
+		_bg_text_color = bg;
+	}
+
+	Pint getPosition() const {
+		return Pint{ _position.x, _position.y - int(_l) };
 	}
 };
