@@ -637,3 +637,33 @@ public:
 		return Pint{ _position.x, _position.y - int(_l) };
 	}
 };
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// 
+	//    Histogram data analysis in console.
+	// 
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+class IHistogram {
+public:
+	virtual void draw() = 0;
+
+
+	virtual ~IHistogram(){}
+};
+
+template<typename T>
+class DHistogram {
+public:
+	std::vector<T> _data;
+	static_assert(std::is_arithmetic_v<T>, "Type should be an arithmetic");
+};
+
+template<typename T>
+class Histogram :private DHistogram<T>, public IHistogram {
+
+public:
+
+};
