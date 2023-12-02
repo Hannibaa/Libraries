@@ -11,29 +11,6 @@
 
 using namespace std::chrono_literals;
 
-template<typename T>
-struct Point2d {
-	T x;
-	T y;
-
-	Point2d(T _x = T{}, T _y = T{}) : x{_x},y{_y}{}
-
-	T& operator[](size_t t) {
-		if (t == 0) return x;
-		if (t == 1) return y;
-		Print_(color::Red, "Undefined!!!") << end_;
-	}
-
-	T operator[](size_t t) const {
-		if (t == 0) return x;
-		if (t == 1) return y;
-		Print_(color::Red, "Undefined!!!") << end_;
-	}
-};
-
-using Pint = Point2d<int>;
-using Pfloat = Point2d<float>;
-
 
 constexpr int _width = 145;
 constexpr int _height = 35;
@@ -51,15 +28,7 @@ void retate_array_value(T valueU, T valueV, T* _U, T* _V) {
 	_V[0] = valueV;
 }
 
-void put_string_at(int x, int y, const std::wstring& wstr, color _color = color::White) {
-	wprint_ << MOVETO(x, y);
-	WPrint_(_color, wstr);
-}
 
-void put_char_at(int x, int y, const char c, int _color) {
-	wprint_ << MOVETO(x, y);
-	WPrint_(_color, c);
-}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 
@@ -98,7 +67,8 @@ public:
 
 	std::wstring update() {
 		std::wstringstream str;
-		int _x = x; int _y = y;
+		int _x = int(x); 
+		int _y = int(y);
 		str << MOVETO(_x, _y) << _wCOLOR_FG256(_color) << text << RESETMODE;
 
 		return str.str();
@@ -199,7 +169,8 @@ public:
 		moving(x, y, _vx, _vy);
 		select_shape();
 		std::wstringstream str;
-		int _x = x; int _y = y;
+		int _x = int(x); 
+		int _y = int(y);
 		str << MOVETO(_x, _y) << _wCOLOR_FG256(_color) << text << RESETMODE;
 		return str.str();
 	}
@@ -442,7 +413,7 @@ public:
 
 template<typename T>
 requires std::integral<T>
-T sqrt_distance(const Point2d<T>& p1,  const Point2d<T>& p2) {
+T sqrt_distance(const esc::Point2d<T>& p1,  const esc::Point2d<T>& p2) {
 	return (p1[0] - p2[0]) * (p1[0] - p2[0]) + (p1[1] - p2[1]) * (p1[1] - p2[1]);
 }
 
@@ -468,202 +439,4 @@ public:
 		_start = std::chrono::system_clock::now();
 		return _duration.count();
 	}
-};
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 
-//    PROGRESS BAR 
-// 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-class IProgressBar {
-	// inerface abstract
-public:
-	virtual void draw() = 0;
-	virtual void setTitle(const std::wstring_view title) = 0;
-
-	virtual ~IProgressBar() {}
-};
-
-class DProgressBar {
-public:
-	// data :
-	// 1. dimension of progress bar  x0 , y 0  to x1 ,y 1
-	Pint          _position;  // position of bar
-	std::wstring   _title;	  // title of bar
-	int           _length;	  // length of progress bar
-	int           _color;     // color of progress bar.
-
-	virtual ~DProgressBar(){}
-
-	DProgressBar(const Pint& position, const std::wstring& title, int length, int colour)
-		:_position{position}
-		, _title{title}
-		, _length{length}
-		, _color{colour}
-	{}
-};
-
-class ProgressBar : private DProgressBar, public IProgressBar {
-
-	float l;
-	size_t title_size;
-	bool _option_2;
-
-public:
-	ProgressBar(const Pint& position, const std::wstring& title, int length, int colour)
-		:DProgressBar(position,title, length,colour)
-		, l{}
-		, _option_2{false}
-	{
-		title_size = _title.size();
-	}
-
-	virtual void setTitle(const std::wstring_view title) {
-		_title = title;
-		title_size = _title.size();
-	}
-
-	void set_value(float _l_percents) {
-		l = _l_percents * float(_length) / 100.f;
-		if (l > _length) l = float(_length);
-		if (l < 1.0) l = 1.f;
-	}
-
-	void progress(const float& t) {
-		if (l > float(_length)) {
-			return;
-		}
-		if ( l < 1) l = 1.0;
-		l += t;
-	}
-
-	virtual void draw() override {
-		// calculate percent of progression bar
-		size_t t = static_cast<size_t>(l);
-		int l_percent =static_cast<int>( 100.f * l / float(_length));
-		if (l_percent > 100) l_percent = 100;
-
-		if (_option_2) {
-			wprint_ << MOVETO(_position.x + t,_position.y)
-				    << std::to_wstring(l_percent);
-		}
-		else {
-			// printing title and value
-			_title += L"   " + std::to_wstring(l_percent);
-		}
-
-		wprint_ << MOVETO(_position.x, _position.y)
-		        << _title ;
-		
-		size_t _size = _title.size();
-
-		wprint_ << MOVETO(_position.x, _position.y) 
-			    << _wCOLOR_BG256(_color);
-		if ( t > _size)
-			wprint_ << _title 
-			        << REPEAT(t - _size, L' ')
-			        << RESETMODE;
-		else
-			wprint_ << _title.substr(0,t)
-			        << RESETMODE;
-
-		_title = _title.substr(0, title_size);
-	}
-};
-
-class ProgressBarH: private DProgressBar, public IProgressBar {
-
-	int            _text_color;
-	int            _width_bar;
-	int            _bg_text_color;
-	float          _l;
-	Pint           _delta_tx;
-	// TODO   set max_length_bar as static or as template pas to static constexpr.
-
-public:
-	ProgressBarH() = default;
-
-	ProgressBarH(const Pint& position, const std::wstring& title, int length,
-		         int color_bar, int color_text = 15)
-		: DProgressBar(position,title,length,color_bar)
-		, _text_color{color_text}
-		, _l{}
-		, _delta_tx{}
-	{
-		_width_bar = _title.size();
-		
-		// check if length of bar and screen with coordinate fit 
-		if (_length > _position.y - 2) _length = _position.y - 1;
-	}
-
-	virtual void setTitle(const std::wstring_view title) override {
-		_title = title;
-	}
-
-	void adjust_title(int x0, int y0) {
-		_delta_tx.x = x0;
-		_delta_tx.y = y0;
-	}
-
-	void set_width(int width) {
-		_width_bar = width;
-	}
-
-	// the value here is percentage
-	void set_value(float l_percents) {
-		_l = l_percents * float(_length) / 100.f;
-		_l = std::clamp<float>(_l,0,_length);
-	}
-
-	virtual void draw() override {
-		wprint_ << WMOVETO(_position.x - _delta_tx.x , _position.y + 1 + _delta_tx.y)
-			   << WTEXT_COLOR(_text_color, _bg_text_color, _title);
-
-		for (int i = 0; i < static_cast<int>(_l); ++i) {
-			wprint_ << WMOVETO(_position.x, _position.y - i)
-				    << _wCOLOR_BG256(_color) 
-				    << std::wstring(_width_bar, ' ')
-				    << RESETMODE;
-				    
-		}
-	}
-
-	void setBackground_color(int bg) {
-		_bg_text_color = bg;
-	}
-
-	Pint getPosition() const {
-		return Pint{ _position.x, _position.y - int(_l) };
-	}
-};
-
-
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// 
-	//    Histogram data analysis in console.
-	// 
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-class IHistogram {
-public:
-	virtual void draw() = 0;
-
-
-	virtual ~IHistogram(){}
-};
-
-template<typename T>
-class DHistogram {
-public:
-	std::vector<T> _data;
-	static_assert(std::is_arithmetic_v<T>, "Type should be an arithmetic");
-};
-
-template<typename T>
-class Histogram :private DHistogram<T>, public IHistogram {
-
-public:
-
 };
