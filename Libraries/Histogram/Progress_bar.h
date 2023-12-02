@@ -46,7 +46,7 @@
 #include <algorithm>
 #include <MyLib/Console_Library/escape_code.h>
 
-
+// using also namespace cui = User_Interface;
 namespace User_Interface {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -64,60 +64,69 @@ namespace User_Interface {
 		virtual ~IProgressBar() {}
 	};
 
-	template<typename T>
 	class DProgressBar {
 	public:
 		// data :
-		Pint           _position;  // position of bar
-		std::wstring   _title;	  // title of bar
-		int            _length;	  // length of progress bar
-		int            _color;     // color of progress bar.
-		float          l_100;      // percentage from length.
+		Pint                 _position;  // position of bar
+		const std::wstring   bar_title;	  // title of bar
+		int                  _length;	  // length of progress bar
+		int                  _color;     // color of progress bar.
+		int                  bg_color;   // bar background color show total 100% bar.
+		float                l_100;      // percentage from length.
 
 		// associated value that represented ;
-		T              v_min;
-		T              v_max;
-		T              value;
+		float              v_min;
+		float              v_max;
+		float              value;
 
 		virtual ~DProgressBar() {}
 
-		DProgressBar(int x, int y, const std::wstring& title, int length, T max, T min,int colour)
+		DProgressBar(int x, int y, const std::wstring& title, int length
+			, float min, float max, int colour, int _bg_color = 238)
 			:_position(x, y)
-			, _title{ title }
+			, bar_title{ title }
 			, _length{ length }
 			, _color{ colour }
+			, bg_color{_bg_color}
 			, v_min{ min }
 			, v_max{ max }
 			, value{ min }
 			, l_100{}
 		{}
 
-		virtual ~DProgressBar() {}
 	};
 
 
 
-	template<typename T>
-	class ProgressBar : private DProgressBar<T>, public IProgressBar {
+	class ProgressBar : private DProgressBar, public IProgressBar {
 
-		int       l;
-		size_t    title_size;
-		bool      enable_value;    // enable show value
+		int                   l;
+		size_t                title_size;
+		bool                  enable_value;    // enable show value
+		std::wstring          _title;       // this one is constante
 
 	public:
 		ProgressBar() = default;
 
-		ProgressBar(int x, int y, const std::wstring& title, int length,T min, T max,  int colour)
-			:DProgressBar<T>(x, y, title, length, min, max, colour)
-			, l{}
+		ProgressBar(int x, int y, const std::wstring& title,
+			        int length,float min, float max,  int colour, int bg_color)
+			:DProgressBar(x, y, title, length, min, max, colour, bg_color)
+			, l{} 
 			, enable_value{ true }
 		{
+			_title = bar_title;
 			title_size = _title.size();
 		}
 
-		virtual void setTitle(const std::wstring_view title) {
+
+		virtual void set_title(const std::wstring_view title) override {
 			_title = title;
 			title_size = _title.size();
+		}
+
+		void display_value( const std::wstring& superator = L"|") {
+			_title = bar_title + superator +
+				std::to_wstring(value).substr(0, 3 + std::to_wstring(value).find(L'.')) + L" ";
 		}
 
 		Pint getPosition() const {
@@ -129,51 +138,42 @@ namespace User_Interface {
 		}
 
 
-		void set_value(T _value) {
+		void set_value(float _value) {
 			// set the value 
 			value = std::clamp(_value, v_min, v_max);
 			// calculate l
 			float _l = float(_length) * float(value - v_min) / float(v_max - v_min);
-			l = std::round(_l);
+			l = std::clamp(int( std::round(_l) ), 0, _length) ;
 			// calculate l_100
 			l_100 = std::clamp(100.f * _l / float(_length), 0.f, 100.f);
 			//wprint_ << "l100 " << l_100 << wend_;
 		}
 
-		T get_value() const {
+		float get_value() const {
 			return value;
 		}
 
 		virtual void draw() override {
-			// calculate percent of progression bar
-			int l_percent = int(std::round(l_100));
+			std::wstring l_str = std::to_wstring(int(std::round(l_100)));
+			std::wstring strbar = _title + std::wstring( _length - _title.size() , L' ');
 
-
-			if (enable_value) {
-				int X = _position.x + l;
-				X = X < int(_title.size() + 10) ? int(_title.size()) + 10 : X; // this for writing percent 
-				wprint_ << MOVETO(X, _position.y)                           // inside colored bar or
-					<< std::to_wstring(l_percent);                            // at the end of bar 
+			if (l > _title.size() + 3) {
+				if (l < _length - 1)
+					strbar.insert(l, l_str);
 			}
-			else {
-				// printing title and value
-				_title += L"   " + std::to_wstring(value);
-			}
-
-			wprint_ << MOVETO(_position.x, _position.y)
-				    << _title;
-
-			size_t _size = _title.size();
-
-			wprint_ << MOVETO(_position.x, _position.y)
-				<< _wCOLOR_BG256(_color);
-			if (l > _size)
-				wprint_ << _title
-				<< REPEAT(l - _size, L' ')
-				<< RESETMODE;
 			else
-				wprint_ << _title.substr(0, l)
+				strbar.insert(_title.size() + 4, l_str);
+		
+			strbar = strbar.substr(0, _length);
+
+			wprint_ << MOVETO(_position.x, _position.y)
+				<< _wCOLOR_BG256(_color) << strbar.substr(0, l)
+				<< _wCOLOR_BG256(bg_color)
+				<< strbar.substr(l)
 				<< RESETMODE;
+			
+			if ( l > _length - 2)
+				wprint_ << l_str;
 
 			_title = _title.substr(0, title_size);
 		}
@@ -181,3 +181,5 @@ namespace User_Interface {
 
 
 }
+
+namespace cui = User_Interface;
