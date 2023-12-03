@@ -44,6 +44,7 @@
 
 #pragma once
 #include <algorithm>
+#include <cmath>
 #include <MyLib/Console_Library/escape_code.h>
 
 // using also namespace cui = User_Interface;
@@ -70,9 +71,11 @@ namespace User_Interface {
 		Pint                 _position;  // position of bar
 		const std::wstring   bar_title;	  // title of bar
 		int                  _length;	  // length of progress bar
+		int                  _width;     // width of progress bar
 		int                  _color;     // color of progress bar.
 		int                  bg_color;   // bar background color show total 100% bar.
 		float                l_100;      // percentage from length.
+		int                  l;          // indicator of active position bar length
 
 		// associated value that represented ;
 		float              v_min;
@@ -86,21 +89,28 @@ namespace User_Interface {
 			:_position(x, y)
 			, bar_title{ title }
 			, _length{ length }
-			, _color{ colour }
 			, bg_color{_bg_color}
+			, _color{colour}
 			, v_min{ min }
 			, v_max{ max }
 			, value{ min }
 			, l_100{}
+			, l{}
 		{}
 
 	};
 
 
-
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// 
+	//    Horizontal Progress Bar ;
+	// 
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	class ProgressBar : private DProgressBar, public IProgressBar {
 
-		int                   l;
 		size_t                title_size;
 		bool                  enable_value;    // enable show value
 		std::wstring          _title;       // this one is constante
@@ -111,7 +121,6 @@ namespace User_Interface {
 		ProgressBar(int x, int y, const std::wstring& title,
 			        int length,float min, float max,  int colour, int bg_color)
 			:DProgressBar(x, y, title, length, min, max, colour, bg_color)
-			, l{} 
 			, enable_value{ true }
 		{
 			_title = bar_title;
@@ -176,6 +185,106 @@ namespace User_Interface {
 				wprint_ << l_str;
 
 			_title = _title.substr(0, title_size);
+		}
+	};
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//    Vertical Progress Bar ;
+// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	class VProgressBar : private DProgressBar, public IProgressBar {
+
+		int            _text_color;
+		int            _text_bg_color;
+		Pint           _delta_tx;
+		std::wstring   _title;
+		// TODO   set max_length_bar as static or as template pas to static constexpr.
+
+	public:
+		VProgressBar() = default;
+
+		VProgressBar(int x, int y, const std::wstring& title, int length, int width,
+			float min,float max,
+			int color_bar, int _bg_color = 16)
+			: DProgressBar(x , y, title, length , min, max, color_bar, _bg_color)
+			, _text_color{ color::White }
+			, _text_bg_color{color::Grey19}
+			, _delta_tx{}
+		{
+			_width = width;
+			_title = bar_title;
+			// check if length of bar and screen with coordinate fit 
+			if (_length > _position.y - 2) _length = _position.y - 1;
+		}
+
+		virtual void set_title(const std::wstring_view title) override {
+			_title = title;
+		}
+
+		void set_width(int width) {
+			_width = width;
+		}
+
+		// the value here is percentage
+		void set_value(float _value) {
+			// set the value 
+			value = std::clamp(_value, v_min, v_max);
+			// calculate l
+			float _l = float(_length) * float(value - v_min) / float(v_max - v_min);
+			l = std::clamp(int(std::round(_l)), 0, _length);
+			// calculate l_100
+			l_100 = std::clamp(100.f * _l / float(_length), 0.f, 100.f);
+			//wprint_ << "l100 " << l_100 << wend_;
+		}
+
+		float get_value() const {
+			return value;
+		}
+
+		void display_value() {
+			std::wstring value_str = std::to_wstring(value).substr(0, 3 + std::to_wstring(value).find(L'.'));
+			int x_shifting = std::abs(_width - int(value_str.size())) / 2;
+			wprint_ << WMOVETO(_position.x - x_shifting, _position.y - l)
+				    << _wCOLOR_FG256(_color)
+				    << value_str
+				    << RESETMODE;
+		}
+
+		void adjust_title(int x0 = 0, int y0 = 0, bool enable_adjustement = true) {
+			if (enable_adjustement)
+				_delta_tx.x = std::abs(_width - int(_title.size())) / 2 + x0;
+			else
+				_delta_tx.x = x0;
+
+			_delta_tx.y = y0;
+		}
+
+		virtual void draw() override {
+			wprint_ << WMOVETO(_position.x - _delta_tx.x, _position.y + 1 + _delta_tx.y)
+				<< WTEXT_COLOR(_text_color, _text_bg_color, _title);
+
+			for (int i = 0; i < l; ++i) {
+				wprint_ << WMOVETO(_position.x, _position.y - i)
+					<< _wCOLOR_BG256(_color)
+					<< std::wstring(_width, ' ')
+					<< RESETMODE;
+
+			}
+		}
+
+		void set_text_color(int bg, int fg = color::White) {
+			_text_bg_color = bg;
+			_text_color = fg;
+		}
+
+		Pint getPosition() const {
+			return Pint{ _position.x, _position.y - l };
 		}
 	};
 
