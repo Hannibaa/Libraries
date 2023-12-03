@@ -597,7 +597,7 @@ public:
 		int title_size = int(_title.size());
 
 		int title_y = y - _length / 2 - title_size / 2;
-		int title_x = x - 11;
+		int title_x = x - 1;
 
 		wchar_t line = hline;
 		wchar_t T_line = hline_t;
