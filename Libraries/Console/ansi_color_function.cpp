@@ -38,8 +38,13 @@ int main()
 			if (KeyPressed(_u('B'))) --b;
 		}
 
+		if (KeyPressed(VK_SPACE)) {
+			++r; ++g; ++b;
+		}
 
-
+		if (KeyPressed(VK_BACK)) {
+			--r; --g; --b;
+		}
 
 		if (KeyPressed(VK_ESCAPE)) {
 			break;
