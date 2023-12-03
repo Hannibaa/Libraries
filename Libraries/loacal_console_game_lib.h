@@ -417,26 +417,3 @@ T sqrt_distance(const esc::Point2d<T>& p1,  const esc::Point2d<T>& p2) {
 	return (p1[0] - p2[0]) * (p1[0] - p2[0]) + (p1[1] - p2[1]) * (p1[1] - p2[1]);
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 
-//    Small class handle times elapsed in game loop
-// 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-class Elapsed_Time {
-
-	std::chrono::system_clock::time_point _start;
-	std::chrono::duration<float> _duration;
-
-public:
-
-	Elapsed_Time()
-		: _start{std::chrono::system_clock::now()}
-		, _duration{}
-	{}
-
-	float operator()() {
-		_duration =  std::chrono::system_clock::now() - _start;
-		_start = std::chrono::system_clock::now();
-		return _duration.count();
-	}
-};
