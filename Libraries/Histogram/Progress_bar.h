@@ -48,7 +48,7 @@
 #include <MyLib/Console_Library/escape_code.h>
 
 // using also namespace cui = User_Interface;
-namespace User_Interface {
+namespace cui {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 
@@ -60,6 +60,7 @@ namespace User_Interface {
 	class IProgressBar {
 	public:
 		virtual void draw() = 0;
+		virtual void clean(int) const = 0;
 		virtual void set_title(const std::wstring_view title) = 0;
 
 		virtual ~IProgressBar() {}
@@ -186,6 +187,13 @@ namespace User_Interface {
 
 			_title = _title.substr(0, title_size);
 		}
+
+		virtual void clean(int _col) const override {
+			wprint_ << MOVETO(_position.x, _position.y)
+				    << _wCOLOR_BG256(_col)
+				    << WREPEAT(_length, L' ')
+				    << RESETMODE;
+		}
 	};
 
 
@@ -272,10 +280,18 @@ namespace User_Interface {
 			for (int i = 0; i < l; ++i) {
 				wprint_ << WMOVETO(_position.x, _position.y - i)
 					<< _wCOLOR_BG256(_color)
-					<< std::wstring(_width, ' ')
+					<< std::wstring(_width, L' ')
 					<< RESETMODE;
 
 			}
+		}
+
+		virtual void clean(int _col = 0) const override {
+			for(int i = 0; i != _length ;++i)
+				wprint_ << WMOVETO(_position.x , _position.y - i)
+				        << _wCOLOR_BG256(_col) 
+				        << std::wstring(_width, L' ')
+				        << RESETMODE;
 		}
 
 		void set_text_color(int bg, int fg = color::White) {
@@ -284,6 +300,10 @@ namespace User_Interface {
 		}
 
 		Pint getPosition() const {
+			return _position;
+		}
+
+		Pint getEndBarPosition() const {
 			return Pint{ _position.x, _position.y - l };
 		}
 	};
@@ -291,4 +311,3 @@ namespace User_Interface {
 
 }
 
-namespace cui = User_Interface;
