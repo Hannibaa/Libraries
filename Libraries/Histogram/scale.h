@@ -1,3 +1,23 @@
+/*
+ *****************************************************************************
+ *                                                                           *
+ *                          Platform Independent                             *
+ *                     Scale for  Library                        *
+ *                                                                           *
+ * Author: KADDA Aoues - haoues_k@yahoo.fr - 2023                            *
+ *                                                                           *
+ * URL :                                                                     *
+ *                                                                           *
+ * Copyright notice:                                                         *
+ * Free use of the Library CFile                                             *
+ * is permitted under the guidelines and in accordance with the most current *
+ * version of the MIT License.                                               *
+ * http://www.opensource.org/licenses/MIT                                    *
+ *                                                                           *
+ *****************************************************************************
+*/
+
+
 #pragma once
 #include <MyLib/Console_Library/escape_code.h>
 
