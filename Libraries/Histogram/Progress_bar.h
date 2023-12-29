@@ -275,17 +275,27 @@ namespace cui {
 
 			_delta_tx.y = y0;
 		}
-
+		
+		/// <summary>
+		///					Drawing the bar.
+		/// </summary>
 		virtual void draw() override {
 			wprint_ << WMOVETO(_position.x - _delta_tx.x, _position.y + 1 + _delta_tx.y)
 				<< WTEXT_COLOR(_text_color, _text_bg_color, _title);
 
 			for (int i = 0; i < l; ++i) {
 				wprint_ << WMOVETO(_position.x, _position.y - i)
-					<< _wCOLOR_BG256(_color)
-					<< std::wstring(_width, L' ')
-					<< RESETMODE;
+					    << _wCOLOR_BG256(_color)
+					    << std::wstring(_width, L' ')
+					    << RESETMODE;
 
+			}
+
+			for (int i = l; i < _length; ++i) {
+				wprint_ << WMOVETO(_position.x, _position.y - i)
+					    << _wCOLOR_BG256(bg_color)
+					    << std::wstring(_width, L' ')
+					    << RESETMODE;
 			}
 		}
 
@@ -300,6 +310,14 @@ namespace cui {
 		void set_text_color(int bg, int fg = color::White) {
 			_text_bg_color = bg;
 			_text_color = fg;
+		}
+
+		int get_length() const {
+			return _length;
+		}
+
+		int get_width() const {
+			return _width;
 		}
 
 		Pint getPosition() const {
