@@ -11,7 +11,7 @@ int main()
 	INIT_WCHAR_TEXT;
 	WHIDE_CURSOR;
 
-	cui::Mesured_value  flow_bar(10 ,25, -10.5f,+11.6f, L"FlowIn",L"Gal/min" ,
+	cui::Gauge_bar  flow_bar(10 ,25, -10.5f,+11.6f, L"FlowIn",L"Gal/min" ,
 		                          10,3,color::Fuchsia,color::Grey11);
 
 
