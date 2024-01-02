@@ -9,7 +9,7 @@ std::wstring to_fwstring(float x, size_t npoint) {
 
 namespace cui {
 
-	class Mesured_value {
+	class Gauge_bar {
 		cui::VProgressBar   _bar;
 		Pint                _pos;
 
@@ -25,7 +25,7 @@ namespace cui {
 			int color_bar, int _bg_color = 16)
 */
 	public:
-	    Mesured_value(int x, int y, float min, float max, 
+	    Gauge_bar(int x, int y, float min, float max, 
 			const std::wstring& title,
 			const std::wstring& unite,
 		    int length, int width, int color_bar, int _bg_color = 16 )
