@@ -52,3 +52,4 @@
 /Libraries/x64/Release/_IsIncrementalBuild
 /Libraries/data.bin
 *.config
+/Libraries/image.txt
