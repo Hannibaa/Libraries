@@ -62,7 +62,7 @@ namespace cui {
 		void draw() {
 			_bar.set_value(_value);
 			_bar.draw();
-			draw_graduation(5);
+			draw_graduation(2);
 			// todo put strings 
 			/*
 			         put title, and value of title and unit in this layout :
