@@ -8,7 +8,7 @@
 	will generalize for basic_string
 */
 
-
+using namespace std::string_literals;
 
 int main() {
 
@@ -27,6 +27,8 @@ int main() {
 	print_ << "ddef" - s2 << end_;
 
 	print_ << "hello234234ccddd" - s1 << end_;
+	print_ << "this is one of oasis"s - "is"s << end_;
+	print_ << "this is one of oasis"s / "is"s << end_;
 
 	//print_ << "s1 = " << s1 << end_ << end_;
 	//print_ << "s2 = " << s2 << end_ << end_;
