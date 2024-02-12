@@ -58,6 +58,29 @@ std::string operator - (const std::string& s1, const std::string& s2) {
 	return s;
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//     Operation divide / as remove all substring 's2' from 's1'
+// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+std::string operator / (std::string s1, const std::string& s2) {
+	size_t sz2 = s2.size();
+	if (s1.size() < sz2) {
+		std::cout << "undifined operation \n";
+		return {};
+	}
+	size_t pos{};
+	while ( true ) {
+		pos = s1.find(s2);
+		if (pos == std::string::npos) break;
+		s1.erase(pos, sz2);
+		std::cout << "pos : " << pos << '\n';
+		std::cout << "s1  : " << s1 << '\n';
+	}
+
+	return s1;
+}
 
 //template<typename Tchar>
 //std::basic_string<Tchar> operator - (const std::basic_string<Tchar>& s1, 
