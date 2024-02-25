@@ -17,8 +17,8 @@ namespace cui {
 		int _width;
 
 		// Glyph drawing box
-		const char line = '\xc4';
-		const char bar = '\xb3';
+		const char line   = '\xc4';
+		const char bar    = '\xb3';
 		const char shap_L = '\xc0';
 		const char shap_7 = '\xbf';
 		const char shap_J = '\xd9';
