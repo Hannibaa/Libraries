@@ -57,7 +57,6 @@ public:
 int main()
 {
 	SETMODE_WTTEXT;
-	ESC::winit_cursor;
 
 	// wprint_ << SET_MAX_LENGTH(120) << SET_MAX_LINES(35);
 	// wprint_ << DOUBLE_HBHalf;
@@ -78,7 +77,7 @@ int main()
 	while (1) {
 		int _color = 13;
 
-		wcls();
+		esc::wcls();
 		swprintf_s(title, L"  Game Moving Text number [%4d]| distance []", vtext.size());
 		put_string_at(30, 0, title , color::Red);
 
